@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -21,7 +23,13 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/app.css',
   ],
+
+  globals: {
+    id: 'app', // replacing __nuxt
+    context: '__onjourney__', // replacing __NUXT__
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -50,5 +58,16 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery'
+      })
+    ],
+  },
+
+  loading: {
+    color: '#00BADE',
+    height: '3px',
+    throttle: 200
+  },
 }

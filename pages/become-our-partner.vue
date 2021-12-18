@@ -5,13 +5,18 @@
 
         <!-- hero -->
         <div class="bg-cs-dark-blue">
-            <div class="relative z-[1] pb-10 px-5 sm:px-15 lg:px-32 flex flex-col-reverse md:flex-row items-center justify-between lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
+            <div class="relative z-[1] pb-10 pt-5 px-5 sm:px-15 lg:px-32 flex flex-col-reverse md:flex-row items-center justify-between lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
+                <!-- hero img -->
+                <div class="p-10 pt-6">
+                    <img class="w-[450px] 2xl:w-[500px]" src="~/assets/img/illustrations/agreement.png" alt="hero">
+                </div>
+
                 <div class="w-full md:w-[500px] text-white py-10 pt-6">
-                    <div class="text-3.5xl lg:text-4xl xl:text-4.5xl leading-12 xl:leading-14 text-center md:text-left">
-                        Connecting <span class="font-extrabold">Traveller</span> with <span class="font-extrabold">Travel Agent</span> to <span class="font-extrabold">Explore Hidden Gem Destinations</span>
+                    <div class="text-3.5xl lg:text-4xl leading-12 lg:leading-14 text-center md:text-left">
+                        Do you have a <span class="font-extrabold">Travel Agency</span> or <span class="font-extrabold">Transportation Renter business</span> ? Come join us as an <span class="font-extrabold">On-Journey Partner!</span>
                     </div>
                     <div class="mt-2.5 text-2base text-center md:text-left">
-                        and contribute to the tourism ecosystem
+                        being the first would be much better
                     </div>
                     <div class="mt-8 flex items-center gap-3 justify-center md:justify-start">
                         <a href="" class="px-5.5 py-3 text-2sm rounded-full bg-white text-cs-dark-blue border-2 border-white font-bold whitespace-nowrap">
@@ -21,11 +26,6 @@
                             Register Now
                         </a>
                     </div>
-                </div>
-                
-                <!-- hero img -->
-                <div class="p-10 pt-6">
-                    <img class="w-[450px] 2xl:w-[500px]" src="~/assets/img/illustrations/hero-header.png" alt="hero">
                 </div>
 
                 <!-- dot -->
@@ -40,49 +40,49 @@
             <ul class="relative z-[1] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <li class="bg-[#f1f5f5] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
                     <div>
-                        <img class="max-w-full w-23" src="~/assets/img/illustrations/choices.svg">
+                        <img class="max-w-full w-23" src="~/assets/img/illustrations/digital.svg">
                     </div>
                     <h1 class="text-center text-2base font-bold mb-3 mt-6">
-                        A Lot of Agency Choices
+                        Digitize Your Business
                     </h1>
                     <p class="text-center text-2sm">
-                        Book and Order Travel Agent with many different travel package services experience
+                        Make the products/services of your travel/rental business accessible, ordered, modified & transacted online anywhere.
                     </p>
                 </li>
 
                 <li class="bg-[#f1f5f5] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
                     <div>
-                        <img class="max-w-full w-23" src="~/assets/img/illustrations/pagoda.svg">
+                        <img class="max-w-full w-23" src="~/assets/img/illustrations/bullhorn.svg">
                     </div>
                     <h1 class="text-center text-2base font-bold mb-3 mt-6">
-                        Rich Travel Destination
+                        Digital Promotion Media of Your Business
                     </h1>
                     <p class="text-center text-2sm">
-                        Exposing uncommon hidden gem destination and enjoy new anti-mainstream experience
+                        On-Journey will promote your business services and products for free with direct access to your business.
                     </p>
                 </li>
 
                 <li class="bg-[#f1f5f5] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
                     <div>
-                        <img class="max-w-full w-23" src="~/assets/img/illustrations/tourism.svg">
+                        <img class="max-w-full w-23" src="~/assets/img/illustrations/cloud.svg">
                     </div>
                     <h1 class="text-center text-2base font-bold mb-3 mt-6">
-                        Customize Your Destination
+                        Digital Transaction Infrastructure of Your Business
                     </h1>
                     <p class="text-center text-2sm">
-                        Just search and select to make your own custom multiple destination with good price and easy payment
+                        On-Journey will simplify your business transactions with a cashless online payment line automatically directly to your account.
                     </p>
                 </li>
 
                 <li class="bg-[#f1f5f5] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
                     <div>
-                        <img class="max-w-full w-23" src="~/assets/img/illustrations/car.svg">
+                        <img class="max-w-full w-23" src="~/assets/img/illustrations/administrative.svg">
                     </div>
                     <h1 class="text-center text-2base font-bold mb-3 mt-6">
-                        Your Tour Transport Solution
+                        Your Business Assistant
                     </h1>
                     <p class="text-center text-2sm">
-                        Penetrate the "unreachable" destination location with on-journey local taxi & on-journey rental
+                        On-Journey will display the transaction performance of your business and help you in making business decisions.
                     </p>
                 </li>
             </ul>
@@ -98,46 +98,23 @@
             </div>
         </div>
 
-        <!-- partners -->
+        <!-- why us -->
         <div class="pt-20 relative text-cs-text-primary">
-            <div class="relative z-[1] px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto flex flex-col-reverse lg:flex-row gap-12 lg:gap-8">
+            <div class="relative z-[1] px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto flex flex-col-reverse lg:flex-row gap-12 lg:gap-15">
                 <!-- left -->
-                <div class="w-full">
-                    <h1 class="font-extrabold text-xl mb-6">Travel Agent Partners</h1>
-                    <div class="grid grid-cols-2 w-full gap-5 sm:gap-8">
-                        <div class="shadow-cs-100 group rounded-xl bg-white p-6">
-                            <div class="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Bali Enjoy Tour">
-                                <img class="w-full h-full object-contain" src="~/assets/img/partners/bali_enjoy.png" alt="Bali Enjoy Tour">
-                            </div>
-                            <h1 class="mt-3 font-semibold text-sm text-center">Bali Enjoy Tour</h1>
-                        </div>
-                        <div class="shadow-cs-100 group rounded-xl bg-white p-6">
-                            <div class="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Vijaya Tour">
-                                <img class="w-full h-full object-contain" src="~/assets/img/partners/vj.png" alt="Vijaya Tour">
-                            </div>
-                            <h1 class="mt-3 font-semibold text-sm text-center">Vijaya Tour</h1>
-                        </div>
-                        <div class="shadow-cs-100 group rounded-xl bg-white p-6">
-                            <div class="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Golde Kris Tours">
-                                <img class="w-full h-full object-contain" src="~/assets/img/partners/gk.png" alt="Golde Kris Tours">
-                            </div>
-                            <h1 class="mt-3 font-semibold text-sm text-center">Golden Kris Tours</h1>
-                        </div>
-                        <a href="" class="shadow-cs-100 hover:bg-[#006ca3] hover:transform hover:translate-y-[-2%] transition-all duration-500 rounded-xl text-white p-6 flex items-center justify-center text-center font-semibold bg-cs-dark-blue">
-                            See all our travel agent partners
-                        </a>
-                    </div>
-                </div>
-
-                <!-- right -->
                 <div class="w-full lg:pl-5 text-cs-text-primary">
                     <h1 class="font-extrabold text-xl mb-5">What is On Journey?</h1>
 
-                    <p class="leading-7">On-Journey adalah startup teknologi yang bergerak dalam dunia pariwisata bertujuan untuk memudahkan traveler dalam memesan layanan travel agent, sekaligus memperkuat ekosistem pariwisata dengan membantu memberdayakan dan menambah kemampuan travel agen konvensional dalam bersaing secara digital, serta menghidupkan destinasi wisata yang tidak terekpos.</p>
+                    <p class="leading-7">Salah satu tujuan kami dalam mendirikan startup ini adalah membantu travel agen konvensional dan moda transportasi lokal yang telah tergerus eksistensinya oleh kemajuan dan kemandirian traveler dalam berwisata agar dapat bersaing kembali dengan lebih maksimal. Bagi kami travel agent merupakan garda terdepan untuk dapat meningkatkan kepuasan dan experience traveller terhadap destinasi wisata dan juga sebagai pemberi informasi serta pengawas traveller. Selain itu, dengan menggunakan jasa travel agen maka pendapatan orang-orang yang ada disektiar destinasi maupun pendapatan daerah tempat destinasi tersebut berada akan lebih maksimal karena perputaran uang yang lebih luas...</p>
 
                     <a href="" class="inline-block mt-6 px-6 py-3 rounded-full  font-semibold bg-cs-dark-blue hover:bg-[#006ca3] text-white hover:transform hover:translate-y-[-6%] transition-all duration-500 border-csbg-cs-dark-blue text-sm hover:shadow-lg">
                         Read More
                     </a>
+                </div>
+
+                <!-- right -->
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full -mt-5" src="~/assets/img/illustrations/why-us.svg">
                 </div>
             </div>
 
@@ -156,38 +133,38 @@
             <div class="relative z-[1] px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <div class="w-full xl:w-4/5 mx-auto flex flex-col gap-15 md:gap-8">
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/calendar.svg" alt="">
+                        <img class="h-[220px]" src="~/assets/img/illustrations/digital-access.svg" alt="">
                         <div class="md:pl-20">
-                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Proses Booking Mudah</h1>
-                            <p class="text-center md:text-left">On-Journey menjadikan reservasi/booking travel agen yang konvensional menjadi lebih mudah langsung dari tangan anda.</p>
+                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Akses Secara Digital</h1>
+                            <p class="text-center md:text-left">Membuat layanan travel anda dapat diakses dan dipesan secara digital sehingga dapat mempermudah traveler domestik maupun internasional untuk menemukan & menggunakan layanan anda.</p>
                         </div>
                     </div>
                     <div class="flex items-center flex-col-reverse md:flex-row">
                         <div class="md:pr-20">
-                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Jelajahi Semua Destinasi</h1>
-                            <p class="text-center md:text-left">Dengan banyaknya destinasi yang tersedia, anda tidak perlu ragu dalam memilih destinasi, anda dapat melihat foto, penjelasan & rating destinasi, anda juga dapat langsung memasukkannya dalam list perjalanan.</p>
+                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Manajemen Yang Lengkap</h1>
+                            <p class="text-center md:text-left">Anda dapat dengan mudah memanajemen layanan travel anda, mulai dari manajemen paket, harga/destinasi, jenis kendaraan, detil layanan yang ditawarkan, pesanan, jenis mobil, harga mobil, dsb, dan mengupdate layanan anda langsung pada dashboard aplikasi untuk mitra on-journey.</p>
                         </div>
-                        <img class="h-[220px]" src="~/assets/img/illustrations/destination.svg" alt="">
+                        <img class="h-[220px]" src="~/assets/img/illustrations/management.svg" alt="">
                     </div>
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/search.svg" alt="">
+                        <img class="h-[220px]" src="~/assets/img/illustrations/share.svg" alt="">
                         <div class="md:pl-20">
-                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Lebih Mudah dengan Filter</h1>
-                            <p class="text-center md:text-left">Gunakan fitur filter untuk menampilkan harga, layanan, paket, kategori dan hal lain yang lebih relevan untuk anda.</p>
+                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Mempermudah Marketing</h1>
+                            <p class="text-center md:text-left">Mitra On-Journey dapat lebih mudah dalam memarketingkan usahanya, mitra dapat membagikan barcode travel agen yang kami berikan dimanapun ia inginkan untuk memasarkan produknya untuk dapat langsung menuju dan memesan produk mitra, selain itu kamipun akan memasarkan usaha anda secara gratis.</p>
                         </div>
                     </div>
                     <div class="flex items-center flex-col-reverse md:flex-row">
                         <div class="md:pr-20">
-                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Kustomisasi Paket Destinasi</h1>
-                            <p class="text-center md:text-left">Anda dapat memodifikasi rute destinasi berantai, tipe kendaraan, penggunaan & bahasa guide dan lain sebagainya sekaligus mengendalikan harganya bagaikan memberikan topping pada makanan kesukaan anda!</p>
+                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Fitur Premium</h1>
+                            <p class="text-center md:text-left">Nikmati fitur premium ERP (Enterprise Resource Planning) kami, sistem yang membantu anda sebagai pemilik bisnis travel untuk memanajemen bisnisnya secara menyeluruh seperti transaksi, keuangan, pegawai/driver, planning, resource, dsb, dan bahkan dapat merangkumnya dalam statistik portofolio bisnis untuk keperluan evaluasi maupun kerjasama & investasi anda kedepan.</p>
                         </div>
-                        <img class="h-[220px]" src="~/assets/img/illustrations/map.svg" alt="">
+                        <img class="h-[220px]" src="~/assets/img/illustrations/features.svg" alt="">
                     </div>
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/driver.svg" alt="">
+                        <img class="h-[220px]" src="~/assets/img/illustrations/develope.svg" alt="">
                         <div class="md:pl-20">
-                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Sewa Kendaraan</h1>
-                            <p class="text-center md:text-left">Anda sulit mencari kendaraan di daerah wisata? apabila begitu gunakanlah mitra local transportation kami yang ada di setiap lokasi wisata untuk berpergian, atau sewa saja kendaraanya sendiri lewat fitur rent.</p>
+                            <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Pengembangan Fitur dan Akses</h1>
+                            <p class="text-center md:text-left">Masih kurang? Banyak benefit lain seperti kredit poin, upaya kerjasama untuk pembukaan akses, serta beberapa fitur dalam pengembangan layanan On-Journey dengan upaya memaksimalkan kinerja sistem dan layanan untuk mengkoneksikan traveler dan travel agen, transportasi wisata lokal dan rental serta memperkuat ekosistem wisata.</p>
                         </div>
                     </div>
                 </div>
@@ -219,21 +196,27 @@
                     <div class="w-full pr-10 py-10 pl-10 md:pr-0 md:py-15 md:pl-15">
                         <div>
                             <h1 class="text-3xl font-extrabold leading-10">
-                                Use the On-Journey app 
+                                Ready for your journey?
                             </h1>
                             <h1 class="text-3xl font-extrabold leading-10">
-                                for free on your phone
+                                Register your company now.
                             </h1>
                         </div>
-                        <p class="text-sm mt-5 mb-10">The first step to start your journey takes less than a minute.</p>
+                        <p class="text-sm mt-5 mb-10">Take advantage of our features and leap up your business.</p>
 
-                        <div class="relative z-[1] flex items-center gap-5">
-                            <a href="" class="inline-block w-37 sm:w-40">
-                                <img class="h-full" src="~/assets/img/illustrations/google-play.png">
-                            </a>
-                            <a href="" class="inline-block w-37 sm:w-40">
-                                <img class="h-full" src="~/assets/img/illustrations/app-store.png">
-                            </a>
+                        <div class="relative z-[1] flex items-center gap-3">
+                            <button class="p-5 py-3 rounded-full bg-cs-dark-blue text-white text-2sm font-bold hover:bg-[#006ca3] transition-colors duration-300 flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="none" d="M0 0h24v24H0z"/><path d="M7 5V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4zM4 16v3h16v-3H4zm0-2h16V7H4v7zM9 3v2h6V3H9zm2 8h2v2h-2v-2z"/>
+                                </svg>
+                                Travel Agent
+                            </button>
+                            <button class="p-5 py-3 rounded-full bg-cs-dark-blue text-white text-2sm font-bold hover:bg-[#006ca3] transition-colors duration-300 flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="none" d="M0 0L24 0 24 24 0 24z"/><path d="M14.172 3c.53 0 1.039.21 1.414.586l4.828 4.828c.375.375.586.884.586 1.414V17h2v2h-8.126c-.445 1.726-2.01 3-3.874 3-1.864 0-3.43-1.274-3.874-3H3c-.552 0-1-.448-1-1V5c0-1.105.895-2 2-2h10.172zM11 16c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm3.172-11H4v12h3.126c.444-1.725 2.01-3 3.874-3 1.864 0 3.43 1.275 3.874 3H19V9.828L14.172 5zM14 7v6H6V7h8zm-2 2H8v2h4V9z"/>
+                                </svg>
+                                Local Transport
+                            </button>
                         </div>
                     </div>
 
