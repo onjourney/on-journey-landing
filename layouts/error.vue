@@ -25,18 +25,8 @@
 </template>
 
 <script>
-    import { mapActions } from 'vuex'
-
     export default {
         props: ['error'],
         layout: 'error', // you can set a custom layout for the error page
-        mounted() {
-            this.checkTheme();
-        },
-        methods: {
-            ...mapActions({
-                checkTheme: 'theme/checkTheme'
-            }),
-        }
     }
 </script>

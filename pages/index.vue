@@ -4,7 +4,7 @@
         <NavigationMain />
 
         <!-- hero -->
-        <div class="bg-cs-dark-blue">
+        <div ref="header" class="bg-cs-dark-blue">
             <div class="relative z-[1] pb-10 px-5 sm:px-15 lg:px-32 flex flex-col-reverse md:flex-row items-center justify-between lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <div class="w-full md:w-[500px] text-white py-10 pt-6">
                     <div class="text-3.5xl lg:text-4xl xl:text-4.5xl leading-12 xl:leading-14 text-center md:text-left">
@@ -17,15 +17,15 @@
                         <a href="" class="px-5.5 py-3 text-2sm rounded-full bg-white text-cs-dark-blue border-2 border-white font-bold whitespace-nowrap">
                             Explore More
                         </a>
-                        <a href="" class="px-5.5 py-3 text-2sm rounded-full text-white border-2 border-white hover:bg-white hover:text-cs-dark-blue transition-colors duration-500 font-bold whitespace-nowrap">
+                        <button @click="scrollToRegister()" class="px-5.5 py-3 text-2sm rounded-full text-white border-2 border-white hover:bg-white hover:text-cs-dark-blue transition-colors duration-500 font-bold whitespace-nowrap">
                             Register Now
-                        </a>
+                        </button>
                     </div>
                 </div>
                 
                 <!-- hero img -->
                 <div class="p-10 pt-6">
-                    <img class="w-[450px] 2xl:w-[500px]" src="~/assets/img/illustrations/hero-header.png" alt="hero">
+                    <img class="w-[450px] 2xl:w-[500px] xl:min-h-[491px]" src="~/assets/img/illustrations/hero-header.png" alt="hero">
                 </div>
 
                 <!-- dot -->
@@ -106,25 +106,19 @@
                     <h1 class="font-extrabold text-xl mb-6">Travel Agent Partners</h1>
                     <div class="grid grid-cols-2 w-full gap-5 sm:gap-8">
                         <div class="shadow-cs-100 group rounded-xl bg-white p-6">
-                            <div class="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Bali Enjoy Tour">
-                                <img class="w-full h-full object-contain" src="~/assets/img/partners/bali_enjoy.png" alt="Bali Enjoy Tour">
-                            </div>
+                            <LazyLoadImage parentClass="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Bali Enjoy Tour" imageClass="w-full h-full object-contain" :src="require('~/assets/img/partners/bali_enjoy.png')" alt="Bali Enjoy Tour" />
                             <h1 class="mt-3 font-semibold text-sm text-center">Bali Enjoy Tour</h1>
                         </div>
                         <div class="shadow-cs-100 group rounded-xl bg-white p-6">
-                            <div class="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Vijaya Tour">
-                                <img class="w-full h-full object-contain" src="~/assets/img/partners/vj.png" alt="Vijaya Tour">
-                            </div>
+                            <LazyLoadImage parentClass="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Vijaya Tour" imageClass="w-full h-full object-contain" :src="require('~/assets/img/partners/vj.png')" alt="Vijaya Tour" />
                             <h1 class="mt-3 font-semibold text-sm text-center">Vijaya Tour</h1>
                         </div>
                         <div class="shadow-cs-100 group rounded-xl bg-white p-6">
-                            <div class="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Golde Kris Tours">
-                                <img class="w-full h-full object-contain" src="~/assets/img/partners/gk.png" alt="Golde Kris Tours">
-                            </div>
+                            <LazyLoadImage parentClass="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Golde Kris Tours" imageClass="w-full h-full object-contain" :src="require('~/assets/img/partners/gk.png')" alt="Golde Kris Tours" />
                             <h1 class="mt-3 font-semibold text-sm text-center">Golden Kris Tours</h1>
                         </div>
                         <a href="" class="shadow-cs-100 hover:bg-[#006ca3] hover:transform hover:translate-y-[-2%] transition-all duration-500 rounded-xl text-white p-6 flex items-center justify-center text-center font-semibold bg-cs-dark-blue">
-                            See all our travel agent partners
+                            See all our travel agent partner
                         </a>
                     </div>
                 </div>
@@ -156,36 +150,36 @@
             <div class="relative z-[1] px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <div class="w-full xl:w-4/5 mx-auto flex flex-col gap-15 md:gap-8">
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/calendar.svg" alt="">
-                        <div class="md:pl-20">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/calendar.svg')" />
+                        <div class="md:pl-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Proses Booking Mudah</h1>
                             <p class="text-center md:text-left">On-Journey menjadikan reservasi/booking travel agen yang konvensional menjadi lebih mudah langsung dari tangan anda.</p>
                         </div>
                     </div>
                     <div class="flex items-center flex-col-reverse md:flex-row">
-                        <div class="md:pr-20">
+                        <div class="md:pr-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Jelajahi Semua Destinasi</h1>
                             <p class="text-center md:text-left">Dengan banyaknya destinasi yang tersedia, anda tidak perlu ragu dalam memilih destinasi, anda dapat melihat foto, penjelasan & rating destinasi, anda juga dapat langsung memasukkannya dalam list perjalanan.</p>
                         </div>
-                        <img class="h-[220px]" src="~/assets/img/illustrations/destination.svg" alt="">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/destination.svg')" />
                     </div>
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/search.svg" alt="">
-                        <div class="md:pl-20">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/search.svg')" />
+                        <div class="md:pl-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Lebih Mudah dengan Filter</h1>
                             <p class="text-center md:text-left">Gunakan fitur filter untuk menampilkan harga, layanan, paket, kategori dan hal lain yang lebih relevan untuk anda.</p>
                         </div>
                     </div>
                     <div class="flex items-center flex-col-reverse md:flex-row">
-                        <div class="md:pr-20">
+                        <div class="md:pr-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Kustomisasi Paket Destinasi</h1>
                             <p class="text-center md:text-left">Anda dapat memodifikasi rute destinasi berantai, tipe kendaraan, penggunaan & bahasa guide dan lain sebagainya sekaligus mengendalikan harganya bagaikan memberikan topping pada makanan kesukaan anda!</p>
                         </div>
-                        <img class="h-[220px]" src="~/assets/img/illustrations/map.svg" alt="">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/map.svg')" />
                     </div>
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/driver.svg" alt="">
-                        <div class="md:pl-20">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/driver.svg')" />
+                        <div class="md:pl-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Sewa Kendaraan</h1>
                             <p class="text-center md:text-left">Anda sulit mencari kendaraan di daerah wisata? apabila begitu gunakanlah mitra local transportation kami yang ada di setiap lokasi wisata untuk berpergian, atau sewa saja kendaraanya sendiri lewat fitur rent.</p>
                         </div>
@@ -206,8 +200,8 @@
             </div>
 
             <div class="flex gap-3 sm:gap-5 justify-center mt-8">
-                <input type="text" class="px-4 py-3.5 rounded-lg bg-gray-100 flex-1 sm:flex-none w-auto sm:w-[270px] text-sm focus:outline-none" placeholder="example@email.com">
-                <button type="submit" class="text-sm whitespace-nowrap px-6 py-3.5 rounded-lg bg-cs-dark-blue hover:bg-[#006ca3] transition-colors duration-300 text-white">Subscribe</button>
+                <input type="email" class="px-4 py-3.5 rounded-lg bg-gray-100 flex-1 sm:flex-none w-auto sm:w-[270px] text-2sm focus:outline-none" placeholder="example@email.com">
+                <button type="submit" class="text-2sm whitespace-nowrap px-6 py-3.5 rounded-lg bg-cs-dark-blue hover:bg-[#006ca3] transition-colors duration-300 text-white">Subscribe</button>
             </div>
         </div>
 
@@ -254,6 +248,9 @@
 
         <!-- footer -->
         <FooterMain />
+
+        <!-- btn to top -->
+        <ButtonToTop />
     </div>
 </template>
 
@@ -263,5 +260,11 @@
         head: {
             title: 'On Journey - Home'
         },
+        methods: {
+            scrollToRegister() {
+                this.$router.push({path: '/become-our-partner'});
+                localStorage.setItem('scrollToRegister', true);
+            }
+        }
     }
 </script>

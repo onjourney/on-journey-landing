@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-9 pt-15 gap-14 text-cs-text-primary">
             <div class="col-span-1 lg:col-span-3 lg:pr-10">
                 <h1 class="font-extrabold text-2xl">On-Journey</h1>
-                <p class="mb-5 mt-3 inline-block text-2sm leading-7">Ayo bergabung bersama kami. Kami telah bekerja sama dengan banyak pihak. Jika kamu tertarik menjadi partner kami, segera daftarkan dirimu sekarang juga.</p>
+                <p class="mb-5 mt-3 inline-block text-2sm leading-7">Ayo bergabung bersama kami. Kami telah bekerja sama dengan banyak pihak. Jika kamu tertarik menjadi partner kami, segera daftarkan usahamu sekarang juga.</p>
                 <button class="inline-block px-4.5 py-3 text-2sm font-semibold rounded-full bg-cs-dark-blue hover:transform hover:translate-y-[-6%] transition-all duration-500 hover:bg-[#006ca3] text-white hover:shadow-lg focus:outline-none focus:ring">
                 Join with us
             </button>

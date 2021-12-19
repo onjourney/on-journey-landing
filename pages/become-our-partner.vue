@@ -4,11 +4,11 @@
         <NavigationMain />
 
         <!-- hero -->
-        <div class="bg-cs-dark-blue">
-            <div class="relative z-[1] pb-10 pt-5 px-5 sm:px-15 lg:px-32 flex flex-col-reverse md:flex-row items-center justify-between lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
+        <div ref="header" class="bg-cs-dark-blue">
+            <div class="relative z-[1] pb-10 pt-5 px-5 sm:px-15 lg:px-32 flex flex-col md:flex-row items-center justify-between lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <!-- hero img -->
                 <div class="p-10 pt-6">
-                    <img class="w-[450px] 2xl:w-[500px]" src="~/assets/img/illustrations/agreement.png" alt="hero">
+                    <img class="w-[450px] 2xl:w-[500px] xl:min-h-[467px]" src="~/assets/img/illustrations/agreement.png" alt="hero">
                 </div>
 
                 <div class="w-full md:w-[500px] text-white py-10 pt-6">
@@ -22,9 +22,9 @@
                         <a href="" class="px-5.5 py-3 text-2sm rounded-full bg-white text-cs-dark-blue border-2 border-white font-bold whitespace-nowrap">
                             Explore More
                         </a>
-                        <a href="" class="px-5.5 py-3 text-2sm rounded-full text-white border-2 border-white hover:bg-white hover:text-cs-dark-blue transition-colors duration-500 font-bold whitespace-nowrap">
+                        <button @click="scrollToRegister()" class="px-5.5 py-3 text-2sm rounded-full text-white border-2 border-white hover:bg-white hover:text-cs-dark-blue transition-colors duration-500 font-bold whitespace-nowrap">
                             Register Now
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -105,7 +105,7 @@
                 <div class="w-full lg:pl-5 text-cs-text-primary">
                     <h1 class="font-extrabold text-xl mb-5">What is On Journey?</h1>
 
-                    <p class="leading-7">Salah satu tujuan kami dalam mendirikan startup ini adalah membantu travel agen konvensional dan moda transportasi lokal yang telah tergerus eksistensinya oleh kemajuan dan kemandirian traveler dalam berwisata agar dapat bersaing kembali dengan lebih maksimal. Bagi kami travel agent merupakan garda terdepan untuk dapat meningkatkan kepuasan dan experience traveller terhadap destinasi wisata dan juga sebagai pemberi informasi serta pengawas traveller. Selain itu, dengan menggunakan jasa travel agen maka pendapatan orang-orang yang ada disektiar destinasi maupun pendapatan daerah tempat destinasi tersebut berada akan lebih maksimal karena perputaran uang yang lebih luas...</p>
+                    <p class="leading-7">Salah satu tujuan kami dalam mendirikan startup ini adalah membantu travel agen konvensional dan moda transportasi lokal yang telah tergerus eksistensinya oleh kemajuan dan kemandirian traveler dalam berwisata agar dapat bersaing kembali dengan lebih maksimal. Bagi kami travel agent merupakan garda terdepan untuk dapat meningkatkan kepuasan dan experience traveller terhadap destinasi wisata dan juga sebagai pemberi informasi serta pengawas traveller...</p>
 
                     <a href="" class="inline-block mt-6 px-6 py-3 rounded-full  font-semibold bg-cs-dark-blue hover:bg-[#006ca3] text-white hover:transform hover:translate-y-[-6%] transition-all duration-500 border-csbg-cs-dark-blue text-sm hover:shadow-lg">
                         Read More
@@ -113,9 +113,7 @@
                 </div>
 
                 <!-- right -->
-                <div class="w-full flex items-center justify-center">
-                    <img class="w-full -mt-5" src="~/assets/img/illustrations/why-us.svg">
-                </div>
+                <LazyLoadImage parentClass="w-full flex items-center justify-center" imageClass="w-full" :src="require('~/assets/img/illustrations/why-us.svg')" />
             </div>
 
             <!-- bg illustration -->
@@ -133,36 +131,36 @@
             <div class="relative z-[1] px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <div class="w-full xl:w-4/5 mx-auto flex flex-col gap-15 md:gap-8">
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/digital-access.svg" alt="">
-                        <div class="md:pl-20">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/digital-access.svg')" />
+                        <div class="md:pl-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Akses Secara Digital</h1>
                             <p class="text-center md:text-left">Membuat layanan travel anda dapat diakses dan dipesan secara digital sehingga dapat mempermudah traveler domestik maupun internasional untuk menemukan & menggunakan layanan anda.</p>
                         </div>
                     </div>
                     <div class="flex items-center flex-col-reverse md:flex-row">
-                        <div class="md:pr-20">
+                        <div class="md:pr-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Manajemen Yang Lengkap</h1>
                             <p class="text-center md:text-left">Anda dapat dengan mudah memanajemen layanan travel anda, mulai dari manajemen paket, harga/destinasi, jenis kendaraan, detil layanan yang ditawarkan, pesanan, jenis mobil, harga mobil, dsb, dan mengupdate layanan anda langsung pada dashboard aplikasi untuk mitra on-journey.</p>
                         </div>
-                        <img class="h-[220px]" src="~/assets/img/illustrations/management.svg" alt="">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/management.svg')" />
                     </div>
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/share.svg" alt="">
-                        <div class="md:pl-20">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/share.svg')" />
+                        <div class="md:pl-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Mempermudah Marketing</h1>
                             <p class="text-center md:text-left">Mitra On-Journey dapat lebih mudah dalam memarketingkan usahanya, mitra dapat membagikan barcode travel agen yang kami berikan dimanapun ia inginkan untuk memasarkan produknya untuk dapat langsung menuju dan memesan produk mitra, selain itu kamipun akan memasarkan usaha anda secara gratis.</p>
                         </div>
                     </div>
                     <div class="flex items-center flex-col-reverse md:flex-row">
-                        <div class="md:pr-20">
+                        <div class="md:pr-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Fitur Premium</h1>
                             <p class="text-center md:text-left">Nikmati fitur premium ERP (Enterprise Resource Planning) kami, sistem yang membantu anda sebagai pemilik bisnis travel untuk memanajemen bisnisnya secara menyeluruh seperti transaksi, keuangan, pegawai/driver, planning, resource, dsb, dan bahkan dapat merangkumnya dalam statistik portofolio bisnis untuk keperluan evaluasi maupun kerjasama & investasi anda kedepan.</p>
                         </div>
-                        <img class="h-[220px]" src="~/assets/img/illustrations/features.svg" alt="">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/features.svg')" />
                     </div>
                     <div class="flex items-center flex-col md:flex-row">
-                        <img class="h-[220px]" src="~/assets/img/illustrations/develope.svg" alt="">
-                        <div class="md:pl-20">
+                        <LazyLoadImage parentClass="min-w-[220px] min-h-[220px]" imageClass="h-[220px] w-full" :src="require('~/assets/img/illustrations/develope.svg')" />
+                        <div class="md:pl-20 flex-1">
                             <h1 class="text-center md:text-left font-extrabold mb-4 text-xl mt-10 md:mt-0">Pengembangan Fitur dan Akses</h1>
                             <p class="text-center md:text-left">Masih kurang? Banyak benefit lain seperti kredit poin, upaya kerjasama untuk pembukaan akses, serta beberapa fitur dalam pengembangan layanan On-Journey dengan upaya memaksimalkan kinerja sistem dan layanan untuk mengkoneksikan traveler dan travel agen, transportasi wisata lokal dan rental serta memperkuat ekosistem wisata.</p>
                         </div>
@@ -183,13 +181,13 @@
             </div>
 
             <div class="flex gap-3 sm:gap-5 justify-center mt-8">
-                <input type="text" class="px-4 py-3.5 rounded-lg bg-gray-100 flex-1 sm:flex-none w-auto sm:w-[270px] text-sm focus:outline-none" placeholder="example@email.com">
-                <button type="submit" class="text-sm whitespace-nowrap px-6 py-3.5 rounded-lg bg-cs-dark-blue hover:bg-[#006ca3] transition-colors duration-300 text-white">Subscribe</button>
+                <input type="email" class="px-4 py-3.5 rounded-lg bg-gray-100 flex-1 sm:flex-none w-auto sm:w-[270px] text-2sm focus:outline-none" placeholder="example@email.com">
+                <button type="submit" class="text-2sm whitespace-nowrap px-6 py-3.5 rounded-lg bg-cs-dark-blue hover:bg-[#006ca3] transition-colors duration-300 text-white">Subscribe</button>
             </div>
         </div>
 
-        <!-- download -->
-        <div class="py-20 relative">
+        <!-- register -->
+        <div ref="registerTab" class="py-20 relative">
             <div class="px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <div class="flex gap-10 bg-cs-cyan text-white rounded-[25px]">
                     <!-- left -->
@@ -205,24 +203,28 @@
                         <p class="text-sm mt-5 mb-10">Take advantage of our features and leap up your business.</p>
 
                         <div class="relative z-[1] flex items-center gap-3">
-                            <button class="p-5 py-3 rounded-full bg-cs-dark-blue text-white text-2sm font-bold hover:bg-[#006ca3] transition-colors duration-300 flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path fill="none" d="M0 0h24v24H0z"/><path d="M7 5V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4zM4 16v3h16v-3H4zm0-2h16V7H4v7zM9 3v2h6V3H9zm2 8h2v2h-2v-2z"/>
-                                </svg>
-                                Travel Agent
-                            </button>
-                            <button class="p-5 py-3 rounded-full bg-cs-dark-blue text-white text-2sm font-bold hover:bg-[#006ca3] transition-colors duration-300 flex items-center gap-2">
-                                <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path fill="none" d="M0 0L24 0 24 24 0 24z"/><path d="M14.172 3c.53 0 1.039.21 1.414.586l4.828 4.828c.375.375.586.884.586 1.414V17h2v2h-8.126c-.445 1.726-2.01 3-3.874 3-1.864 0-3.43-1.274-3.874-3H3c-.552 0-1-.448-1-1V5c0-1.105.895-2 2-2h10.172zM11 16c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm3.172-11H4v12h3.126c.444-1.725 2.01-3 3.874-3 1.864 0 3.43 1.275 3.874 3H19V9.828L14.172 5zM14 7v6H6V7h8zm-2 2H8v2h4V9z"/>
-                                </svg>
-                                Local Transport
-                            </button>
+                            <nuxt-link to="/travel-agent/register" custom exact v-slot="{ href, navigate }">
+                                <a :href="href" @click="navigate" class="p-5 py-3 rounded-full bg-cs-dark-blue text-white text-2sm font-bold hover:bg-[#006ca3] transition-colors duration-300 flex items-center gap-2 whitespace-nowrap">
+                                    <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="none" d="M0 0h24v24H0z"/><path d="M7 5V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4zM4 16v3h16v-3H4zm0-2h16V7H4v7zM9 3v2h6V3H9zm2 8h2v2h-2v-2z"/>
+                                    </svg>
+                                    Travel Agent
+                                </a>
+                            </nuxt-link>
+                            <nuxt-link to="/local-transport/register" custom exact v-slot="{ href, navigate }">
+                                <a :href="href" @click="navigate" class="p-5 py-3 rounded-full bg-cs-dark-blue text-white text-2sm font-bold hover:bg-[#006ca3] transition-colors duration-300 flex items-center gap-2 whitespace-nowrap">
+                                    <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="none" d="M0 0L24 0 24 24 0 24z"/><path d="M14.172 3c.53 0 1.039.21 1.414.586l4.828 4.828c.375.375.586.884.586 1.414V17h2v2h-8.126c-.445 1.726-2.01 3-3.874 3-1.864 0-3.43-1.274-3.874-3H3c-.552 0-1-.448-1-1V5c0-1.105.895-2 2-2h10.172zM11 16c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2zm3.172-11H4v12h3.126c.444-1.725 2.01-3 3.874-3 1.864 0 3.43 1.275 3.874 3H19V9.828L14.172 5zM14 7v6H6V7h8zm-2 2H8v2h4V9z"/>
+                                    </svg>
+                                    Local Transport
+                                </a>
+                            </nuxt-link>
                         </div>
                     </div>
 
                     <!-- right -->
                     <div class="hidden md:block w-full pr-15 pt-15">
-                        <img class="w-full h-72 object-cover object-right-top" src="~/assets/img/illustrations/mobile.svg">
+                        <img class="w-full h-72 object-cover object-right-top" src="~/assets/img/illustrations/register.svg">
                     </div>
                 </div>
             </div>
@@ -237,6 +239,9 @@
 
         <!-- footer -->
         <FooterMain />
+
+        <!-- btn to top -->
+        <ButtonToTop />
     </div>
 </template>
 
@@ -246,5 +251,18 @@
         head: {
             title: 'On Journey - Home'
         },
+        mounted() {
+            if (localStorage.getItem('scrollToRegister')) {
+                setTimeout(() => {
+                    this.scrollToRegister();
+                }, 100);
+                localStorage.removeItem('scrollToRegister');
+            }
+        },
+        methods: {
+            scrollToRegister() {
+                $(this.$refs.registerTab)[0].scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+            }
+        }
     }
 </script>

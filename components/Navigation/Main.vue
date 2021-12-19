@@ -1,9 +1,9 @@
 <template>
 <nav :class="[isActiveNav ? 'bg-white shadow-cs-50' : 'bg-cs-dark-blue']" class="sticky top-0 z-[100] transition-colors duration-300 min-h-[78px]">
     <div class="lg:max-w-[1320px] xl:max-w-[1536px] mx-auto flex justify-between py-4 px-5 sm:px-15 lg:px-32">
-        <a href="" class="inline-block relative transition-all duration-300" :class="[isActiveNav ? 'bottom-0' : 'md:bottom-[-16px]']">
+        <div class="inline-block relative transition-all duration-300 min-h-[22.5px]">
             <img class="w-28 sm:w-32" src="~/assets/img/logo.png" alt="logo">
-        </a>
+        </div>
 
         <div class="md:hidden flex gap-3 items-center">
             <button class="inline-flex text-2sm font-bold items-center gap-0.5" :class="[isActiveNav ? 'text-cs-text-primary' : 'text-white']">
@@ -50,7 +50,11 @@ export default {
         }
     },
     mounted() {
-        
+        if (window.scrollY > $(this.$el).height()) {
+            this.isActiveNav = true;
+        } else {
+            this.isActiveNav = false;
+        }
     },
     created() {
         window.addEventListener("scroll", this.handleScroll);

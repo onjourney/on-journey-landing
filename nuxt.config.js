@@ -67,7 +67,7 @@ export default {
 
   loading: {
     color: '#00BADE',
-    height: '3px',
-    throttle: 200
+    height: '2.5px',
+    throttle: 0
   },
 }
