@@ -9,7 +9,8 @@
 <script>
 export default {
     mounted() {
-        if (scrollY > $(this.$parent.$refs.header).height()) {
+        console.log('ok');
+        if (scrollY > $('#header').height()) {
                 $(this.$el).show();
             } else {
                 $(this.$el).hide();
@@ -39,7 +40,7 @@ export default {
     },
     watch: {
         currentScrollY(scrollY) {
-            if (scrollY > $(this.$parent.$refs.header).height()) {
+            if (scrollY > $('#header').height()) {
                 $(this.$el).fadeIn(500);
             } else {
                 $(this.$el).hide();

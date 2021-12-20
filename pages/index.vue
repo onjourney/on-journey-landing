@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- hero -->
-        <div ref="header" class="bg-cs-dark-blue">
+        <div id="header" class="bg-cs-dark-blue">
             <div class="relative z-[1] pb-10 px-5 sm:px-15 lg:px-32 flex flex-col-reverse md:flex-row items-center justify-between lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <div class="w-full md:w-[500px] text-white py-10 pt-6">
                     <div class="text-3.5xl lg:text-4xl xl:text-4.5xl leading-12 xl:leading-14 text-center md:text-left">
