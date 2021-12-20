@@ -1,8 +1,5 @@
 <template>
-    <div class="mx-auto">
-        <!-- navigation -->
-        <NavigationMain />
-
+    <div>
         <!-- hero -->
         <div ref="header" class="bg-cs-dark-blue">
             <div class="relative z-[1] pb-10 px-5 sm:px-15 lg:px-32 flex flex-col-reverse md:flex-row items-center justify-between lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
@@ -103,23 +100,25 @@
             <div class="relative z-[1] px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto flex flex-col-reverse lg:flex-row gap-12 lg:gap-8">
                 <!-- left -->
                 <div class="w-full">
-                    <h1 class="font-extrabold text-xl mb-6">Travel Agent Partners</h1>
+                    <h1 class="font-extrabold text-xl mb-6">Travel Agent Partner</h1>
                     <div class="grid grid-cols-2 w-full gap-5 sm:gap-8">
-                        <div class="shadow-cs-100 group rounded-xl bg-white p-6">
+                        <div class="shadow-cs-10 group rounded-xl bg-white p-6">
                             <LazyLoadImage parentClass="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Bali Enjoy Tour" imageClass="w-full h-full object-contain" :src="require('~/assets/img/partners/bali_enjoy.png')" alt="Bali Enjoy Tour" />
                             <h1 class="mt-3 font-semibold text-sm text-center">Bali Enjoy Tour</h1>
                         </div>
-                        <div class="shadow-cs-100 group rounded-xl bg-white p-6">
+                        <div class="shadow-cs-10 group rounded-xl bg-white p-6">
                             <LazyLoadImage parentClass="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Vijaya Tour" imageClass="w-full h-full object-contain" :src="require('~/assets/img/partners/vj.png')" alt="Vijaya Tour" />
                             <h1 class="mt-3 font-semibold text-sm text-center">Vijaya Tour</h1>
                         </div>
-                        <div class="shadow-cs-100 group rounded-xl bg-white p-6">
+                        <div class="shadow-cs-10 group rounded-xl bg-white p-6">
                             <LazyLoadImage parentClass="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Golde Kris Tours" imageClass="w-full h-full object-contain" :src="require('~/assets/img/partners/gk.png')" alt="Golde Kris Tours" />
                             <h1 class="mt-3 font-semibold text-sm text-center">Golden Kris Tours</h1>
                         </div>
-                        <a href="" class="shadow-cs-100 hover:bg-[#006ca3] hover:transform hover:translate-y-[-2%] transition-all duration-500 rounded-xl text-white p-6 flex items-center justify-center text-center font-semibold bg-cs-dark-blue">
-                            See all our travel agent partner
-                        </a>
+                        <nuxt-link to="/partner" custom exact v-slot="{ href, navigate }">
+                            <a :href="href" @click="navigate" class="shadow-cs-10 hover:bg-[#006ca3] hover:transform hover:translate-y-[-2%] transition-all duration-500 rounded-xl text-white p-6 flex items-center justify-center text-center font-semibold bg-cs-dark-blue">
+                                See all our travel agent partner
+                            </a>
+                        </nuxt-link>
                     </div>
                 </div>
 
@@ -245,12 +244,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- footer -->
-        <FooterMain />
-
-        <!-- btn to top -->
-        <ButtonToTop />
     </div>
 </template>
 
@@ -258,8 +251,9 @@
     export default {
         name: 'HomePage',
         head: {
-            title: 'On Journey - Home'
+            title: 'Home - On Journey'
         },
+        layout: 'main',
         methods: {
             scrollToRegister() {
                 this.$router.push({path: '/become-our-partner'});

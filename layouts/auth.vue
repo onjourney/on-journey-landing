@@ -30,7 +30,7 @@
 
             <!-- right -->
             <div class="w-full md:w-[500px]">
-                <div class="bg-white rounded-xl overflow-hidden border border-cs-border shadow-cs-50">
+                <div class="bg-white rounded-xl overflow-hidden md:border border-cs-border md:shadow-cs-50">
                     <nuxt />
                 </div>
             </div>

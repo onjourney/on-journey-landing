@@ -1,8 +1,5 @@
 <template>
-    <div class="mx-auto">
-        <!-- navigation -->
-        <NavigationMain />
-
+    <div>
         <!-- hero -->
         <div ref="header" class="bg-cs-dark-blue">
             <div class="relative z-[1] pb-10 pt-5 px-5 sm:px-15 lg:px-32 flex flex-col md:flex-row items-center justify-between lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
@@ -236,20 +233,15 @@
                 </div>
             </div>
         </div>
-
-        <!-- footer -->
-        <FooterMain />
-
-        <!-- btn to top -->
-        <ButtonToTop />
     </div>
 </template>
 
 <script>
     export default {
-        name: 'HomePage',
+        name: 'BecomeOurPartnerPage',
+        layout: 'main',
         head: {
-            title: 'On Journey - Home'
+            title: 'Become Our Partner - On Journey'
         },
         mounted() {
             if (localStorage.getItem('scrollToRegister')) {

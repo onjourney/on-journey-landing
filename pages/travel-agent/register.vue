@@ -4,13 +4,15 @@
             <div class="w-24 mb-4 block lg:hidden">
                 <img class="w-full h-full object-cover object-center" src="~/assets/img/logo.png" alt="">
             </div>
-            <h1 class="text-2xl mb-4">
-                <span class="font-extrabold"> Register </span> Travel Agent
-            </h1>
+            <div v-if="step != stepLength-1 && step != stepLength">
+                <h1 class="text-2xl mb-4">
+                    <span class="font-extrabold"> Register </span> Travel Agent
+                </h1>
 
-            <h4 class="text-md mb-6 text-gray-500">Let's get you all set up so you can verify your "travel agent" account and begin setting up your profile.</h4>
+                <h4 class="text-md mb-6 text-gray-500">Let's get you all set up so you can verify your "travel agent" account and begin setting up your profile.</h4>
+            </div>
 
-            <div class="flex items-center my-5 gap-2">
+            <div :class="[step != stepLength-1 && step != stepLength ? 'mt-5' : 'mt-7 md:mt-0 mb-6 md:mb-0']" class="flex items-center mb-5 gap-2">
                 <div class="flex-1 bg-gray-100 rounded-full">
                     <div class="progress-bar rounded-full bg-cs-cyan text-xs leading-none h-2 text-center text-white transition-all duration-500" :style="'width: '+ parseInt(step / stepLength * 100) +'%'"></div>
                 </div>
@@ -169,7 +171,28 @@
                         </span>
                     </div>
                 </div>
-                <div v-if="step == 3" class="mt-10 flex flex-col items-center">
+                <div v-if="step == 3">
+                    <h1 class="text-lg font-extrabold text-center mt-8">Verify your email address</h1>
+                    <p class="text-center text-sm mt-4">We emailed you a four-digit code to {{ formData.email }},</p>
+                    <p class="text-center text-sm">Enter the code below to confirm your email address.</p>
+
+                    <div class="flex gap-4 mt-8 justify-center">
+                        <input type="number" @input="limitInput($event)" class="text-3xl rounded-md border w-16 h-20 text-center focus:outline-none px-4">
+                        <input type="number" @input="limitInput($event)" class="text-3xl rounded-md border w-16 h-20 text-center focus:outline-none px-4">
+                        <input type="number" @input="limitInput($event)" class="text-3xl rounded-md border w-16 h-20 text-center focus:outline-none px-4">
+                        <input type="number" @input="limitInput($event)" class="text-3xl rounded-md border w-16 h-20 text-center focus:outline-none px-4">
+                    </div>
+
+                    <p class="text-sm mt-8 text-center">
+                        Don't receive the code?
+                        <a href="" class="text-cs-cyan font-bold">Resend code</a>
+                    </p>
+
+                    <div class="flex justify-center">
+                        <button @click="nextStep()" class="rounded-lg mt-7 bg-cs-dark-blue text-white w-5/6 px-4 py-2.5">Verify and Proceed</button>
+                    </div>
+                </div>
+                <div v-if="step == stepLength" class="mt-10 flex flex-col items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-30 h-30 text-green-400" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
@@ -182,7 +205,7 @@
                     </button>
                 </div>
 
-                <div v-if="step != 3" class="flex justify-end gap-4 mt-7">
+                <div v-if="step != stepLength && step != stepLength-1" class="flex justify-end gap-4 mt-7">
                     <button v-if="step > 1" @click="previousStep()" type="button" class="py-2 px-4.5 border text-2sm  transition duration-300 focus:outline-none rounded-md">
                         Previous
                     </button>
@@ -197,7 +220,7 @@
                 </div>
             </div>
         </div>
-        <div class="px-10 py-5 border-t border-cs-border text-2xs bg-gray-50">
+        <div class="px-10 py-5 md:border-t md:border-cs-border text-2xs md:bg-gray-50 text-center md:text-left">
             By clicking the button above, you agree to our <a href="" class="font-semibold text-[#003e6a]">term of use</a> and <a href="" class="font-semibold text-[#003e6a]">privacy policies</a>
         </div>
     </div>
@@ -228,13 +251,19 @@ export default {
             },
             errorMessage: [],
             step: 1,
-            stepLength: 3
+            stepLength: 4
         }
     },
     mounted() {
         
     },
     methods: {
+        limitInput(el) {
+            var value = el.target.value;
+            if (value && value.length >= 1) {
+                $(el.target).val(value.substr(0, 1));
+            }
+        },
         submit() {
             console.log(this.formData);
             this.step = this.step+1;
@@ -316,5 +345,14 @@ export default {
         100% {
             background-position: 25px 100%;
         }
+    }
+
+    input[type="number"]::-webkit-outer-spin-button, 
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
     }
 </style>

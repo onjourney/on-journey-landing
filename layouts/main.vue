@@ -1,13 +1,25 @@
 <template>
-    <Nuxt />
+    <div class="mx-auto">
+        <!-- navigation -->
+        <NavigationMain />
+        <NavigationMainMobile :isNavMobileActive="isNavMobileActive" />
+        
+        <Nuxt />
+
+        <!-- footer -->
+        <FooterMain />
+
+        <!-- btn to top -->
+        <ButtonToTop />
+    </div>
 </template>
 
 <script>
 export default {
-    watch: {
-        $route(val) {
-            console.log(val);
-        },
+    data() {
+        return {
+            isNavMobileActive: false
+        }
     }
 }
 </script>
