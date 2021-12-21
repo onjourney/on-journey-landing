@@ -35,7 +35,7 @@
         <!-- strength -->
         <div class="bg-cs-dark-blue relative text-cs-text-primary">
             <ul class="relative z-[1] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
-                <li class="bg-[#f1f5f5] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
+                <li class="bg-[#f5f8f8] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
                     <div>
                         <img class="max-w-full w-23" src="~/assets/img/illustrations/choices.svg">
                     </div>
@@ -47,7 +47,7 @@
                     </p>
                 </li>
 
-                <li class="bg-[#f1f5f5] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
+                <li class="bg-[#f5f8f8] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
                     <div>
                         <img class="max-w-full w-23" src="~/assets/img/illustrations/pagoda.svg">
                     </div>
@@ -59,7 +59,7 @@
                     </p>
                 </li>
 
-                <li class="bg-[#f1f5f5] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
+                <li class="bg-[#f5f8f8] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
                     <div>
                         <img class="max-w-full w-23" src="~/assets/img/illustrations/tourism.svg">
                     </div>
@@ -71,7 +71,7 @@
                     </p>
                 </li>
 
-                <li class="bg-[#f1f5f5] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
+                <li class="bg-[#f5f8f8] shadow-lg rounded-2xl p-8 sm:p-6 xl:p-8 flex flex-col items-center">
                     <div>
                         <img class="max-w-full w-23" src="~/assets/img/illustrations/car.svg">
                     </div>
@@ -84,10 +84,8 @@
                 </li>
             </ul>
 
-            <!-- wave -->
-            <svg class="absolute w-full bottom-0 lg:bottom-[-25px] xl:bottom-[-50px] max-w-[1800px] mx-auto left-50% transform translate-x-[-50%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path class="fill-[#fff]" fill-opacity="1" d="M0,256L1440,64L1440,320L0,320Z"></path>
-            </svg>
+            <!-- triangle -->
+            <div class="triangle-1 absolute bottom-[-2%] inset-x-0 h-70% bg-white"></div>
 
             <!-- dot -->
             <div class="absolute right-0 top-[-20%]">
@@ -96,7 +94,7 @@
         </div>
 
         <!-- partners -->
-        <div class="pt-20 relative text-cs-text-primary">
+        <div class="pt-20 pb-40 relative text-cs-text-primary">
             <div class="relative z-[1] px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto flex flex-col-reverse lg:flex-row gap-12 lg:gap-8">
                 <!-- left -->
                 <div class="w-full">
@@ -140,12 +138,12 @@
                     <img class="h-[600px]" src="~/assets/img/illustrations/bg.png">
                 </div>
             </div>
+
+            <!-- triangle -->
+            <div class="triangle-2 absolute bottom-[-2%] inset-x-0 h-50% bg-[#f6faff]"></div>
         </div>
 
-        <svg class="max-w-[1800px] mx-auto lg:-mt-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f6faff" fill-opacity="1" d="M0,160L1440,256L1440,320L0,320Z"></path>
-        </svg>
-        <div class="relative lg:-mt-5 text-cs-text-primary bg-[#f6faff] pt-5 md:pt-0 pb-25">
+        <div class="relative text-cs-text-primary bg-[#f6faff] pt-6 pb-25">
             <div class="relative z-[1] px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <div class="w-full xl:w-4/5 mx-auto flex flex-col gap-15 md:gap-8">
                     <div class="flex items-center flex-col md:flex-row">

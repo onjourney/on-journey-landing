@@ -48,3 +48,31 @@ body {
         background-position: 450px 0;
     }
 }
+
+
+
+
+.triangle-1 {
+    clip-path: polygon(0 90%, 100% 75%, 100% 100%, 0% 100%);
+}
+.triangle-2 {
+    clip-path: polygon(0 80%, 100% 90%, 100% 100%, 0% 100%);
+}
+
+@screen md {
+    .triangle-1 {
+        clip-path: polygon(0 80%, 100% 35%, 100% 100%, 0% 100%);
+    }
+}
+
+@screen lg {
+    .triangle-2 {
+        clip-path: polygon(0 70%, 100% 90%, 100% 100%, 0% 100%);
+    }
+}
+
+@screen xl {
+    .triangle-1 {
+        clip-path: polygon(0 70%, 100% 0, 100% 100%, 0% 100%);
+    }
+}
