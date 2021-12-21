@@ -28,7 +28,7 @@
         </div>
 
         <!-- list partner -->
-        <div class="px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] py-20">
+        <div class="px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] py-20 mx-auto">
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full gap-5 sm:gap-8">
                 <div class="shadow-cs-10 group rounded-xl bg-white p-6">
                     <LazyLoadImage parentClass="h-20 grayscale group-hover:grayscale-0 transition duration-500" title="Bali Enjoy Tour" imageClass="w-full h-full object-contain" :src="require('~/assets/img/partners/bali_enjoy.png')" alt="Bali Enjoy Tour" />
