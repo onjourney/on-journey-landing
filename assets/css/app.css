@@ -8,6 +8,10 @@
 body {
     font-family: 'Manrope', sans-serif;
 }
+*::selection {
+    background: rgba(0, 186, 222);
+    color: #fff;
+}
 
 /* Fade effect */
 .fade-enter-active,

@@ -1,9 +1,11 @@
 <template>
     <div>
         <div class="p-10">
-            <div class="w-24 mb-4 block lg:hidden">
-                <img class="w-full h-full object-cover object-center" src="~/assets/img/logo.png" alt="">
-            </div>
+            <nuxt-link to="/become-our-partner" custom exact v-slot="{ href, navigate }">
+                <a :href="href" @click="navigate" class="w-24 mb-4 block lg:hidden">
+                    <img class="w-full h-full object-cover object-center" src="~/assets/img/logo.png" alt="">
+                </a>
+            </nuxt-link>
             <div v-if="step != stepLength-1 && step != stepLength">
                 <h1 class="text-2xl mb-4">
                     <span class="font-extrabold"> Register </span> Travel Agent
@@ -210,11 +212,11 @@
                         Previous
                     </button>
 
-                    <button v-if="step < stepLength-1" @click="nextStep()" type="button" class="bg-cs-dark-blue py-2 px-4.5 text-white text-2sm border border-cs-dark-blue border-csbg-cs-dark-blue transition duration-300 focus:outline-none rounded-md">
+                    <button v-if="step < stepLength-2" @click="nextStep()" type="button" class="bg-cs-dark-blue py-2 px-4.5 text-white text-2sm border border-cs-dark-blue border-csbg-cs-dark-blue transition duration-300 focus:outline-none rounded-md">
                         Next
                     </button>
 
-                    <button v-if="step == stepLength-1" @click="submit()" class="bg-cs-dark-blue py-2 px-4.5 text-white text-2sm border border-cs-dark-blue border-csbg-cs-dark-blue transition duration-300 focus:outline-none rounded-md">
+                    <button v-if="step == stepLength-2" @click="submit()" class="bg-cs-dark-blue py-2 px-4.5 text-white text-2sm border border-cs-dark-blue border-csbg-cs-dark-blue transition duration-300 focus:outline-none rounded-md">
                         Submit
                     </button>
                 </div>
@@ -264,9 +266,45 @@ export default {
                 $(el.target).val(value.substr(0, 1));
             }
         },
-        submit() {
-            console.log(this.formData);
+        async submit() {
             this.step = this.step+1;
+            console.log(this.$fire.firestore);
+
+            // create user
+            await this.$fire.auth.createUserWithEmailAndPassword('dikaptrw@gmail.com','Qwert123')
+            .then(async (userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                await this.addUser(user);
+
+                let getUser = await this.getUser()
+                console.log(getUser.data());
+
+                // this.sendEmailVerification();
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+        },
+        async addUser(user) {
+            const userData = {
+                'firstName': 'Dika',
+                'lastName': 'Putra',
+                'bio': `I'm a web developer`,
+            }
+            const userRef = this.$fire.firestore.collection('users').doc(user.uid);
+            const userDoc = await userRef.set(userData);
+            return userDoc;
+        },
+        async getUser() {
+            console.log(this.$fire.auth.currentUser.uid);
+            const userRef = this.$fire.firestore.collection('users').doc(this.$fire.auth.currentUser.uid)
+            const userDoc = await userRef.get();
+            return userDoc;
+        },
+        async sendEmailVerification() {
+            return await this.$fire.auth.currentUser.sendEmailVerification();
         },
         nextStep() {
             if (this.step < this.stepLength) {

@@ -1,9 +1,11 @@
 <template>
     <div>
         <div class="p-10">
-            <div class="w-24 mb-4 block lg:hidden">
-                <img class="w-full h-full object-cover object-center" src="~/assets/img/logo.png" alt="">
-            </div>
+            <nuxt-link to="/become-our-partner" custom exact v-slot="{ href, navigate }">
+                <a :href="href" @click="navigate" class="w-24 mb-4 block lg:hidden">
+                    <img class="w-full h-full object-cover object-center" src="~/assets/img/logo.png" alt="">
+                </a>
+            </nuxt-link>
             <div v-if="step != stepLength-1 && step != stepLength">
                 <h1 class="text-2xl mb-4">
                     <span class="font-extrabold"> Register </span> Travel Agent
