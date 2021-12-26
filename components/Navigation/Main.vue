@@ -19,26 +19,26 @@
             </button>
         </div>
 
-        <ul class="hidden md:flex items-center gap-4.5 -mt-0.5 transition-colors duration-300" :class="[isActiveNav ? 'text-cs-text-primary' : 'text-white']">
+        <ul class="hidden md:flex items-center gap-4.5 -mt-0.5" :class="[isActiveNav ? 'text-cs-text-primary' : 'text-white']">
             <li>
-                <button class="inline-flex text-2sm font-bold items-center gap-0.5">
+                <button class="inline-flex transition-colors duration-200 text-2sm font-bold items-center gap-0.5">
                     ID
                     <svg class="w-3 h-3 -mt-0.5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 16l-6-6h12z"/></svg>
                 </button>
             </li>
             <li>
                 <nuxt-link to="/" custom exact v-slot="{ href, navigate, isActive }">
-                    <a :href="href" @click="navigate" :class="[ isActive ? 'font-extrabold' : '' ]" class="inline-block text-2sm">Home</a>
+                    <a :href="href" @click="navigate" :class="[ isActive ? 'font-extrabold' : '' ]" class="inline-block text-2sm hover:text-[#0EB69B] transition-colors duration-200">Home</a>
                 </nuxt-link>
             </li>
             <li>
                 <nuxt-link to="/partner" custom exact v-slot="{ href, navigate, isActive }">
-                    <a :href="href" @click="navigate" :class="[ isActive ? 'font-extrabold' : '' ]" class="inline-block text-2sm">Partner</a>
+                    <a :href="href" @click="navigate" :class="[ isActive ? 'font-extrabold' : '' ]" class="inline-block text-2sm hover:text-[#0EB69B] transition-colors duration-200">Partner</a>
                 </nuxt-link>
             </li>
             <li>
                 <nuxt-link to="/become-our-partner" custom exact v-slot="{ href, navigate, isActive }">
-                    <a :href="href" @click="navigate" :class="[ isActive ? 'font-extrabold' : '' ]" class="inline-block text-2sm">Become Our Partner</a>
+                    <a :href="href" @click="navigate" :class="[ isActive ? 'font-extrabold' : '' ]" class="inline-block text-2sm hover:text-[#0EB69B] transition-colors duration-200">Become Our Partner</a>
                 </nuxt-link>
             </li>
         </ul>

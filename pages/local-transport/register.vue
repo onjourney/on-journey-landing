@@ -6,7 +6,7 @@
                     <img class="w-full h-full object-cover object-center" src="~/assets/img/logo.png" alt="">
                 </a>
             </nuxt-link>
-            <div v-if="step != stepLength-1 && step != stepLength">
+            <div v-if="step != stepLength">
                 <h1 class="text-2xl mb-4">
                     <span class="font-extrabold"> Register </span> Travel Agent
                 </h1>
@@ -14,7 +14,7 @@
                 <h4 class="text-md mb-6 text-gray-500">Let's get you all set up so you can verify your "travel agent" account and begin setting up your profile.</h4>
             </div>
 
-            <div :class="[step != stepLength-1 && step != stepLength ? 'mt-5' : 'mt-7 md:mt-0 mb-6 md:mb-0']" class="flex items-center mb-5 gap-2">
+            <div :class="[step != stepLength ? 'mt-5' : 'mt-7 md:mt-0 mb-6 md:mb-0']" class="flex items-center mb-5 gap-2">
                 <div class="flex-1 bg-gray-100 rounded-full">
                     <div class="progress-bar rounded-full bg-cs-cyan text-xs leading-none h-2 text-center text-white transition-all duration-500" :style="'width: '+ parseInt(step / stepLength * 100) +'%'"></div>
                 </div>
@@ -24,8 +24,8 @@
             <div>
                 <div v-if="step == 1">
                     <div class="relative w-full mb-4">
-                        <label for="owner_name" class="block text-sm mb-2">
-                            Owner Name
+                        <label for="first_name" class="block text-sm mb-2">
+                            First Name
                         </label>
                         <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
                             <div class="px-3 py-3">
@@ -33,26 +33,26 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                 </svg>
                             </div>
-                            <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="owner_name" id="owner_name" v-model="formData.owner_name" placeholder="company owner name" autofocus="autofocus">
+                            <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="first_name" id="first_name" v-model="formData.first_name" placeholder="owner's first name" autofocus="autofocus">
                         </div>
-                        <span v-if="errorMessage.owner_name" class="inline-block text-red-400 font-medium text-sm my-1">
-                            {{ errorMessage.owner_name[0] }}
+                        <span v-if="errorMessage.first_name" class="inline-block text-red-400 font-medium text-sm my-1">
+                            {{ errorMessage.first_name[0] }}
                         </span>
                     </div>
                     <div class="relative w-full mb-4">
-                        <label for="company_name" class="block text-sm mb-2">
-                            Company Name
+                        <label for="last_name" class="block text-sm mb-2">
+                            Last Name
                         </label>
                         <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
                             <div class="px-3 py-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                 </svg>
                             </div>
-                            <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="company_name" id="company_name" v-model="formData.company_name" placeholder="company name" autofocus="autofocus">
+                            <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="last_name" id="last_name" v-model="formData.last_name" placeholder="owner's last name" autofocus="autofocus">
                         </div>
-                        <span v-if="errorMessage.company_name" class="inline-block text-red-400 font-medium text-sm my-1">
-                            {{ errorMessage.company_name[0] }}
+                        <span v-if="errorMessage.last_name" class="inline-block text-red-400 font-medium text-sm my-1">
+                            {{ errorMessage.last_name[0] }}
                         </span>
                     </div>
                     <div class="relative w-full mb-4">
@@ -69,39 +69,6 @@
                         </div>
                         <span v-if="errorMessage.email" class="inline-block text-red-400 font-medium text-sm my-1">
                             {{ errorMessage.email[0] }}
-                        </span>
-                    </div>
-                    <div class="relative w-full mb-4">
-                        <label for="address" class="block text-sm mb-2">
-                            Company Address
-                        </label>
-                        <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
-                            <div class="px-3 py-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="address" id="address" v-model="formData.address" placeholder="company address" autofocus="autofocus">
-                        </div>
-                        <span v-if="errorMessage.address" class="inline-block text-red-400 font-medium text-sm my-1">
-                            {{ errorMessage.address[0] }}
-                        </span>
-                    </div>
-                    <div class="relative w-full mb-4">
-                        <label for="year_founded" class="block text-sm mb-2">
-                            Year Founded
-                        </label>
-                        <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
-                            <div class="px-3 py-3 border-r">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <date-picker class="w-full" type="year" v-model="formData.year_founded" valueType="format" placeholder="select year founded"></date-picker>
-                        </div>
-                        <span v-if="errorMessage.year_founded" class="inline-block text-red-400 font-medium text-sm my-1">
-                            {{ errorMessage.year_founded[0] }}
                         </span>
                     </div>
                     <div class="relative w-full mb-4">
@@ -122,6 +89,55 @@
                     </div>
                 </div>
                 <div v-if="step == 2">
+                    <div class="relative w-full mb-4">
+                        <label for="company_name" class="block text-sm mb-2">
+                            Company Name
+                        </label>
+                        <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
+                            <div class="px-3 py-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="company_name" id="company_name" v-model="formData.company_name" placeholder="company name" autofocus="autofocus">
+                        </div>
+                        <span v-if="errorMessage.company_name" class="inline-block text-red-400 font-medium text-sm my-1">
+                            {{ errorMessage.company_name[0] }}
+                        </span>
+                    </div>
+                    <div class="relative w-full mb-4">
+                        <label for="year_founded" class="block text-sm mb-2">
+                            Year Founded
+                        </label>
+                        <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
+                            <div class="px-3 py-3 border-r">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <date-picker class="w-full" type="year" v-model="formData.year_founded" valueType="format" placeholder="select year founded"></date-picker>
+                        </div>
+                        <span v-if="errorMessage.year_founded" class="inline-block text-red-400 font-medium text-sm my-1">
+                            {{ errorMessage.year_founded[0] }}
+                        </span>
+                    </div>
+                    <div class="relative w-full mb-4">
+                        <label for="address" class="block text-sm mb-2">
+                            Company Address
+                        </label>
+                        <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
+                            <div class="px-3 py-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="address" id="address" v-model="formData.address" placeholder="company address" autofocus="autofocus">
+                        </div>
+                        <span v-if="errorMessage.address" class="inline-block text-red-400 font-medium text-sm my-1">
+                            {{ errorMessage.address[0] }}
+                        </span>
+                    </div>
                     <div class="relative w-full mb-4">
                         <label for="number_of_vehicles" class="block text-sm mb-2">
                             Number of Vehicles
@@ -173,27 +189,6 @@
                         </span>
                     </div>
                 </div>
-                <div v-if="step == 3">
-                    <h1 class="text-lg font-extrabold text-center mt-8">Verify your email address</h1>
-                    <p class="text-center text-sm mt-4">We emailed you a four-digit code to {{ formData.email }},</p>
-                    <p class="text-center text-sm">Enter the code below to confirm your email address.</p>
-
-                    <div class="flex gap-4 mt-8 justify-center">
-                        <input type="number" @input="limitInput($event)" class="text-3xl rounded-md border w-16 h-20 text-center focus:outline-none px-4">
-                        <input type="number" @input="limitInput($event)" class="text-3xl rounded-md border w-16 h-20 text-center focus:outline-none px-4">
-                        <input type="number" @input="limitInput($event)" class="text-3xl rounded-md border w-16 h-20 text-center focus:outline-none px-4">
-                        <input type="number" @input="limitInput($event)" class="text-3xl rounded-md border w-16 h-20 text-center focus:outline-none px-4">
-                    </div>
-
-                    <p class="text-sm mt-8 text-center">
-                        Don't receive the code?
-                        <a href="" class="text-cs-cyan font-bold">Resend code</a>
-                    </p>
-
-                    <div class="flex justify-center">
-                        <button @click="nextStep()" class="rounded-lg mt-7 bg-cs-dark-blue text-white w-5/6 px-4 py-2.5">Verify and Proceed</button>
-                    </div>
-                </div>
                 <div v-if="step == stepLength" class="mt-10 flex flex-col items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-30 h-30 text-green-400" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -207,7 +202,7 @@
                     </button>
                 </div>
 
-                <div v-if="step != stepLength && step != stepLength-1" class="flex justify-end gap-4 mt-7">
+                <div v-if="step != stepLength" class="flex justify-end gap-4 mt-7">
                     <button v-if="step > 1" @click="previousStep()" type="button" class="py-2 px-4.5 border text-2sm  transition duration-300 focus:outline-none rounded-md">
                         Previous
                     </button>
@@ -241,7 +236,8 @@ export default {
     data() {
         return {
             formData: {
-                owner_name: '',
+                first_name: '',
+                last_name: '',
                 company_name: '',
                 year_founded: '',
                 phone_number: '',
@@ -253,7 +249,7 @@ export default {
             },
             errorMessage: [],
             step: 1,
-            stepLength: 4
+            stepLength: 3
         }
     },
     mounted() {
@@ -266,9 +262,45 @@ export default {
                 $(el.target).val(value.substr(0, 1));
             }
         },
-        submit() {
-            console.log(this.formData);
+        async submit() {
             this.step = this.step+1;
+            console.log(this.$fire.firestore);
+
+            // create user
+            await this.$fire.auth.createUserWithEmailAndPassword('dikaptrw@gmail.com','Qwert123')
+            .then(async (userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                await this.addUser(user);
+
+                let getUser = await this.getUser()
+                console.log(getUser.data());
+
+                // this.sendEmailVerification();
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+        },
+        async addUser(user) {
+            const userData = {
+                'firstName': 'Dika',
+                'lastName': 'Putra',
+                'bio': `I'm a web developer`,
+            }
+            const userRef = this.$fire.firestore.collection('users').doc(user.uid);
+            const userDoc = await userRef.set(userData);
+            return userDoc;
+        },
+        async getUser() {
+            console.log(this.$fire.auth.currentUser.uid);
+            const userRef = this.$fire.firestore.collection('users').doc(this.$fire.auth.currentUser.uid)
+            const userDoc = await userRef.get();
+            return userDoc;
+        },
+        async sendEmailVerification() {
+            return await this.$fire.auth.currentUser.sendEmailVerification();
         },
         nextStep() {
             if (this.step < this.stepLength) {
