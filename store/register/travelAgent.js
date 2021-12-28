@@ -7,6 +7,7 @@ export const state = () => ({
         lastName: '',
         email: '',
         phoneNumber: '',
+        phoneNumberDetails: {},
         password: '',
         confirmPassword: '',
     },
@@ -32,14 +33,19 @@ export const actions = {
         await this.$fire.firestore.collection('travelAgents').doc(formData.email).set({
             firstName: formData.firstName,
             lastName: formData.lastName,
+            email: formData.email,
+            phoneNumber: formData.phoneNumber,
+            phoneNumberDetails: {
+                dialCode: formData.phoneNumberDetails.dialCode,
+                iso2: formData.phoneNumberDetails.iso2,
+                name: formData.phoneNumberDetails.name
+            },
             companyName: formData.companyName,
             yearFounded: formData.yearFounded,
-            phoneNumber: formData.phoneNumber,
-            email: formData.email,
             address: formData.address,
             numberOfVehicles: formData.numberOfVehicles,
             numberOfGuides: formData.numberOfGuides,
-            description: formData.description
+            description: formData.description,
         });
         
         commit('setUser', formData.email);

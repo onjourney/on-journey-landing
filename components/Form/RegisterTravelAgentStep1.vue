@@ -10,7 +10,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                 </div>
-                <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="firstName" id="firstName" v-model="formData.firstName" placeholder="owner's first name" autofocus="autofocus">
+                <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="firstName" id="firstName" v-model="formData.firstName" placeholder="enter owner's first name" autofocus="autofocus">
             </div>
             <span v-if="errorMessage.firstName" class="inline-block text-red-400 font-medium text-2xs my-1">
                 {{ errorMessage.firstName }}
@@ -26,7 +26,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                 </div>
-                <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="lastName" id="lastName" v-model="formData.lastName" placeholder="owner's last name" autofocus="autofocus">
+                <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="text" name="lastName" id="lastName" v-model="formData.lastName" placeholder="enter owner's last name" autofocus="autofocus">
             </div>
             <span v-if="errorMessage.lastName" class="inline-block text-red-400 font-medium text-2xs my-1">
                 {{ errorMessage.lastName }}
@@ -36,14 +36,8 @@
             <label for="phoneNumber" class="block text-sm mb-2">
                 Phone Number
             </label>
-            <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
-                <div class="px-3 py-3">
-                    <svg class="w-4.5 h-4.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                </div>
-                <input class="rounded-none border-l focus:ring-0 focus:outline-none px-3.5 py-2.5 focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="tel" name="phoneNumber" id="phoneNumber" v-model="formData.phoneNumber" placeholder="+628XX-XXXX-XXXX" autofocus="autofocus">
-            </div>
+            <vue-tel-input v-model="formData.phoneNumber" v-on:country-changed="countryChanged" mode="international" :validCharactersOnly="true" :defaultCountry="'ID'"></vue-tel-input>
+
             <span v-if="errorMessage.phoneNumber" class="inline-block text-red-400 font-medium text-2xs my-1">
                 {{ errorMessage.phoneNumber }}
             </span>
@@ -76,7 +70,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
                     </svg>
                 </div>
-                <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="password" name="password" id="password" v-model="formData.password" placeholder="password" autofocus="autofocus">
+                <input class="px-3.5 py-2.5 border-l rounded-none focus:ring-0 focus:outline-none focus:shadow-none w-full border-0 placeholder-[#cacaca] text-2sm" type="password" name="password" id="password" v-model="formData.password" placeholder="enter password" autofocus="autofocus">
             </div>
             <span v-if="errorMessage.password" class="inline-block text-red-400 font-medium text-2xs my-1">
                 {{ errorMessage.password }}
@@ -101,7 +95,7 @@
 
         <div class="flex justify-end items-center gap-4 mt-7">
             <div v-if="nextLoad" class="inline-block w-[18px] h-[18px] border-[3px] rounded-[50%] border-[rgb(192,192,192)] border-t-[rgb(219,234,254)] animate-spin -mr-1"></div>
-            <button ref="nextBtn" @click="nextStep()" type="button" class="bg-cs-dark-blue py-2 px-4 text-white text-2sm border border-cs-dark-blue disabled:bg-[#858585] disabled:border-[rgb(133,133,133)] disabled:cursor-not-allowed border-csbg-cs-dark-blue transition duration-300 focus:outline-none rounded-md">
+            <button ref="nextBtn" @click="nextStep" type="button" class="bg-cs-dark-blue py-2 px-4 text-white text-2sm border border-cs-dark-blue disabled:bg-[#858585] disabled:border-[rgb(133,133,133)] disabled:cursor-not-allowed border-csbg-cs-dark-blue transition duration-300 focus:outline-none rounded-md">
                 Next
             </button>
         </div>
@@ -110,8 +104,11 @@
 
 <script>
 import Swal from 'sweetalert2/dist/sweetalert2'
+import { VueTelInput } from 'vue-tel-input'
+import 'vue-tel-input/dist/vue-tel-input.css'
 
 export default {
+    components: { VueTelInput },
     data() {
         return {
             formData: {
@@ -119,6 +116,7 @@ export default {
                 lastName: '',
                 email: '',
                 phoneNumber: '',
+                phoneNumberDetails: {},
                 password: '',
                 confirmPassword: '',
             },
@@ -181,8 +179,10 @@ export default {
                 this.validateEmail();
             }
             if (!this.errorMessage['confirmPassword']) {
-                console.log('ok');
                 this.validatePassword();
+            }
+            if (!this.errorMessage['phoneNumber']) {
+                this.validatePhoneNumber();
             }
         },
         validateEmail() {
@@ -197,11 +197,41 @@ export default {
                 console.log('ok');
                 this.errorMessage['confirmPassword'] = 'Password confirmation does not match';
             }
+        },
+        countryChanged(country) {
+            this.formData.phoneNumberDetails = country;
+            console.log(this.phoneNumberDetails);
+        },
+        validatePhoneNumber() {
+            if(/[a-zA-Z]/g.test(this.formData.phoneNumber)){
+                this.errorMessage['phoneNumber'] = 'Please enter a valid phone number';
+            } else {
+                delete this.errorMessage['phoneNumber'];
+            }
         }
     }
 }
 </script>
 
 <style>
-
+    body .vue-tel-input {
+        border: 1px solid #e6e6e699;
+        border-radius: 6px;
+        font-size: 15px;
+    }
+    body .vti__input {
+        padding: 10px 14px;
+        border-radius: 6px;
+    }
+    body .vti__input::placeholder {
+        color: #cacaca;
+    }
+    body .vti__dropdown {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border-right: 1px solid #e6e6e699;
+    }
+    body .vti__dropdown-arrow {
+        display: none;
+    }
 </style>

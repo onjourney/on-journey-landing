@@ -81,7 +81,7 @@ export default {
             submitDone: false
         }
     },
-    mounted() {
+    async mounted() {
         if (localStorage.getItem('isUserSubmit')) {
             this.step = this.stepLength;
         }
