@@ -87,8 +87,18 @@
     export default {
         name: 'PartnerPage',
         layout: 'main',
-        head: {
-            title: 'Partner - On Journey'
+        head({ $seo }) {
+            return $seo({
+                title: 'On Journey - Partner',
+                description: `Let's join and contribute to the tourism ecosystem`,
+                openGraph: {
+                    url: 'https://landing.onjourney.id'+require('~/assets/img/seo-img.jpg'),
+                },
+                twitter: {
+                    title: 'On Journey - Partner', 
+                    description: `Let's join and contribute to the tourism ecosystem`,
+                }
+            })
         },
         methods: {
             scrollToRegister() {

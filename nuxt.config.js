@@ -48,8 +48,28 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/firebase'
+    '@nuxtjs/firebase',
+    'nuxt-seo'
   ],
+
+  seo: {
+    title: 'On Journey',
+    description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
+    keywords: 'On-Journey, Travel Agent, Travel, Agent, Plan Trip, Explore, Destinations',
+    canonical: 'auto',
+    isForcedTrailingSlash: false,
+    openGraph: {
+      title: 'On Journey', 
+      description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
+    },
+    twitter: { 
+      site: '@onjourneyid', 
+      creator: '@onjourneyid',
+      card: 'summary_large_image',
+      title: 'On-Journey', 
+      description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
+    }
+  },
 
   firebase: {
     config: {

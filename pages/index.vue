@@ -248,8 +248,18 @@
 <script>
     export default {
         name: 'HomePage',
-        head: {
-            title: 'Home - On Journey'
+        head({ $seo }) {
+            return $seo({
+                title: 'Home - On Journey',
+                description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
+                openGraph: {
+                    url: 'https://landing.onjourney.id'+require('~/assets/img/seo-img.jpg'),
+                },
+                twitter: {
+                    title: 'On-Journey - Home', 
+                    description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
+                }
+            })
         },
         layout: 'main',
         methods: {

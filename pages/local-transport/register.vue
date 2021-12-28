@@ -229,8 +229,18 @@ import 'vue2-datepicker/index.css';
 
 export default {
     layout: 'auth',
-    head: {
-        title: 'Register Travel Agent - On Journey'
+    head({ $seo }) {
+        return $seo({
+            title: 'Register Travel Agent - On Journey',
+            description: `Let's join and contribute to the tourism ecosystem`,
+            openGraph: {
+                url: 'https://landing.onjourney.id'+require('~/assets/img/seo-img.jpg'),
+            },
+            twitter: {
+                title: 'Register Travel Agent - On Journey', 
+                description: `Let's join and contribute to the tourism ecosystem`,
+            }
+        })
     },
     components: { DatePicker },
     data() {

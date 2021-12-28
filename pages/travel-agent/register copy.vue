@@ -2,7 +2,7 @@
     <div>
         <div class="p-10">
             <nuxt-link to="/become-our-partner" custom exact v-slot="{ href, navigate }">
-                <a :href="href" @click="navigate" class="w-24 mb-3 block lg:hidden">
+                <a :href="href" @click="navigate" class="w-24 mb-4 block lg:hidden">
                     <img class="w-full h-full object-cover object-center" src="~/assets/img/logo.png" alt="">
                 </a>
             </nuxt-link>
@@ -14,12 +14,7 @@
                 <h4 class="text-md mb-6 text-gray-500">Let's get you all set up so you can verify your "travel agent" account and begin setting up your profile.</h4>
             </div>
 
-            <div class="block lg:hidden mt-7 mb-6">
-                If you need help <br>
-                You can <a href="https://landing.onjourney.id/help" target="blank" class="font-bold text-[#003E6A]">Contact On-Journey</a>.
-            </div>
-            
-            <div :class="[step != stepLength ? 'mt-5' : 'mt-7 md:mt-0 mb-10']" class="flex items-center mb-5 gap-2">
+            <div :class="[step != stepLength ? 'mt-5' : 'mt-7 md:mt-0 mb-6 md:mb-0']" class="flex items-center mb-5 gap-2">
                 <div class="flex-1 bg-gray-100 rounded-full">
                     <div class="progress-bar rounded-full bg-cs-cyan text-xs leading-none h-2 text-center text-white transition-all duration-500" :style="'width: '+ parseInt(step / stepLength * 100) +'%'"></div>
                 </div>
@@ -27,13 +22,13 @@
             </div>
 
             <div>
-                <div v-if="step == 1">
-                    <FormRegisterTravelAgentStep1 ref="formStep1" @setUserData="setUserData" />
+                <div v-show="step == 1">
+                    <FormRegisterTravelAgentStep1 @setUserData="setUserData" />
                 </div>
-                <div v-if="step == 2">
-                    <FormRegisterTravelAgentStep2 ref="formStep2" @setCompanyData="setCompanyData" @submit="submit" />
+                <div v-show="step == 2">
+                    <FormRegisterTravelAgentStep2 @setCompanyData="setCompanyData" @submit="submit" />
                 </div>
-                <div v-if="step == stepLength" class="flex flex-col items-center">
+                <div v-if="step == stepLength" class="mt-10 flex flex-col items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-30 h-30 text-green-400" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
@@ -41,13 +36,13 @@
                     <h1 class="text-lg font-extrabold mt-4">Submission Complete!</h1>
                     <p class="text-center mt-1">Successfully registered your account. We'll apply everything we can in the next step.</p>
                     
-                    <nuxt-link to="/" custom exact v-slot="{ href, navigate }">
-                        <a :href="href" @click="navigate" class="py-2 px-4.5 mt-6 border text-2sm  transition duration-300 focus:outline-none rounded-lg">Back to Home</a>
-                    </nuxt-link>
+                    <button type="button" @click="resetFormData()" class="py-2 px-4.5 mt-5 border text-2sm  transition duration-300 focus:outline-none rounded-lg">
+                        Back to register
+                    </button>
                 </div>
             </div>
         </div>
-        <div v-if="step != stepLength" class="px-10 py-5 md:border-t md:border-cs-border text-2xs md:bg-gray-50 text-center md:text-left">
+        <div class="px-10 py-5 md:border-t md:border-cs-border text-2xs md:bg-gray-50 text-center md:text-left">
             By clicking the button above, you agree to our <a href="" class="font-semibold text-[#003e6a]">term of use</a> and <a href="" class="font-semibold text-[#003e6a]">privacy policies</a>
         </div>
     </div>
@@ -55,8 +50,6 @@
 
 <script>
 import 'vue2-datepicker/index.css';
-import 'sweetalert2/dist/sweetalert2.min.css'
-import Swal from 'sweetalert2/dist/sweetalert2'
 
 export default {
     layout: 'auth',
@@ -75,16 +68,15 @@ export default {
     },
     data() {
         return {
+            userData: {},
+            companyData: {},
             formData: {},
             step: 1,
             stepLength: 3,
-            submitDone: false
         }
     },
     mounted() {
-        if (localStorage.getItem('isUserSubmit')) {
-            this.step = this.stepLength;
-        }
+        
     },
     methods: {
         setUserData(data) {
@@ -93,30 +85,25 @@ export default {
         setCompanyData(data) {
             this.userData = data;
         },
-        async submit() {
-            let userFormData = this.$store.state.register.travelAgent.userFormData;
-            let companyFormData = this.$store.state.register.travelAgent.companyFormData;
-            
-            this.formData = {...userFormData, ...companyFormData }
+        submit() {
+            this.formData = {...this.userData, ...this.companyData } 
+            console.log(this.formData);
 
-            try {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                await this.$store.dispatch("register/travelAgent/register", this.formData);
-            } catch (error) {
-                Swal.fire({
-                    title: 'Error!',
-                    text: 'Oops, something went wrong, please try again later',
-                    icon: 'error',
-                    confirmButtonText: 'Okay'
-                });
-                return false;
-            }
-
-            this.step = this.step+1;
-            $(this.$refs.formStep2.$refs.submitBtn).removeAttr('disabled');
-            this.$refs.formStep2.submitLoad = false;
-
-            localStorage.setItem('isUserSubmit', true);
+            // await this.$store.dispatch("register/travel-agent/register", this.formData);
+        },
+        resetFormData() {
+            // this.formData = {
+            //     owner_name: '',
+            //     companyName: '',
+            //     yearFounded: '',
+            //     phoneNumber: '',
+            //     email: '',
+            //     address: '',
+            //     numberOfVehicles: '',
+            //     numberOfGuides: '',
+            //     description: ''
+            // };
+            this.step = 1;
         }
     }
 }

@@ -19,6 +19,9 @@ export const actions = {
     setDropdownActive({ commit }, val) {
         commit('setDropdownActive', val);
     },
+    timeout({ commit }, val) {
+        return new Promise(resolve => setTimeout(resolve, val));
+    }
 };
 
 export const mutations = {

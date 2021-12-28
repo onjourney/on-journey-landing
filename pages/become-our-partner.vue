@@ -238,8 +238,18 @@
     export default {
         name: 'BecomeOurPartnerPage',
         layout: 'main',
-        head: {
-            title: 'Become Our Partner - On Journey'
+        head({ $seo }) {
+            return $seo({
+                title: 'On Journey - Become Our Partner',
+                description: 'Do you have a Travel Agency or Transportation Renter business ? Come join us as an On-Journey Partner!',
+                openGraph: {
+                    url: 'https://landing.onjourney.id'+require('~/assets/img/seo-img.jpg'),
+                },
+                twitter: {
+                    title: 'On Journey - Become Our Partner', 
+                    description: 'Do you have a Travel Agency or Transportation Renter business ? Come join us as an On-Journey Partner!',
+                }
+            })
         },
         mounted() {
             if (localStorage.getItem('scrollToRegister')) {
