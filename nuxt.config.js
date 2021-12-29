@@ -73,13 +73,13 @@ export default {
 
   firebase: {
     config: {
-      apiKey: "AIzaSyDWt084el6fW6PU9vqORpvkuEAcubEcQNA",
-      authDomain: "nuxt-firebase-778f5.firebaseapp.com",
-      projectId: "nuxt-firebase-778f5",
-      storageBucket: "nuxt-firebase-778f5.appspot.com",
-      messagingSenderId: "861567457758",
-      appId: "1:861567457758:web:900d5e24c93f2c74b1e54f",
-      measurementId: "G-HQSB6BJ9YG"
+      apiKey: "AIzaSyDNF1aOtJ2HNO8odqVtC1tICxRPC3YzKjk",
+      authDomain: "on-journey-landing-4715e.firebaseapp.com",
+      projectId: "on-journey-landing-4715e",
+      storageBucket: "on-journey-landing-4715e.appspot.com",
+      messagingSenderId: "282313939009",
+      appId: "1:282313939009:web:bcde1046f7af46b5108ec0",
+      measurementId: "G-M603365L14"
     },
     services: {
       auth: true,

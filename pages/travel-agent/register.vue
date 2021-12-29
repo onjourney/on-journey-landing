@@ -28,10 +28,10 @@
 
             <div>
                 <div v-if="step == 1">
-                    <FormRegisterTravelAgentStep1 ref="formStep1" @setUserData="setUserData" />
+                    <FormRegisterTravelAgentStep1 ref="formStep1" />
                 </div>
                 <div v-if="step == 2">
-                    <FormRegisterTravelAgentStep2 ref="formStep2" @setCompanyData="setCompanyData" @submit="submit" />
+                    <FormRegisterTravelAgentStep2 ref="formStep2" @submit="submit" />
                 </div>
                 <div v-if="step == stepLength" class="flex flex-col items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-30 h-30 text-green-400" fill="currentColor" viewBox="0 0 16 16">
@@ -57,6 +57,7 @@
 import 'vue2-datepicker/index.css';
 import 'sweetalert2/dist/sweetalert2.min.css'
 import Swal from 'sweetalert2/dist/sweetalert2'
+import Cookies from 'js-cookie'
 
 export default {
     layout: 'auth',
@@ -77,22 +78,15 @@ export default {
         return {
             formData: {},
             step: 1,
-            stepLength: 3,
-            submitDone: false
+            stepLength: 3
         }
     },
     async mounted() {
-        if (localStorage.getItem('isUserSubmit')) {
+        if (Cookies.get('isUserSubmit')) {
             this.step = this.stepLength;
         }
     },
     methods: {
-        setUserData(data) {
-            this.companyData = data;
-        },
-        setCompanyData(data) {
-            this.userData = data;
-        },
         async submit() {
             let userFormData = this.$store.state.register.travelAgent.userFormData;
             let companyFormData = this.$store.state.register.travelAgent.companyFormData;
@@ -116,7 +110,7 @@ export default {
             $(this.$refs.formStep2.$refs.submitBtn).removeAttr('disabled');
             this.$refs.formStep2.submitLoad = false;
 
-            localStorage.setItem('isUserSubmit', true);
+            Cookies.set('isUserSubmit', true, { expires: 1, path: '' });
         }
     }
 }
