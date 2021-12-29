@@ -182,7 +182,7 @@
         </div>
 
         <!-- register -->
-        <div ref="registerTab" class="py-20 relative">
+        <div ref="registerTab" id="registerTab" class="py-20 relative">
             <div class="px-5 sm:px-15 lg:px-32 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto">
                 <div class="flex gap-10 bg-cs-cyan text-white rounded-[25px]">
                     <!-- left -->

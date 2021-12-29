@@ -34,7 +34,7 @@
         </div>
         <div class="relative w-full mb-4">
             <label for="address" class="block text-sm mb-2">
-                Company Address
+                Address
             </label>
             <div class="border flex items-center rounded-lg focus-within:ring focus-within:ring-blue-50 focus-within:border-cs-cyan-main transition duration-200 overflow-hidden">
                 <div class="px-3 py-3">

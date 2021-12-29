@@ -73,13 +73,14 @@ export default {
 
   firebase: {
     config: {
-      apiKey: "AIzaSyDNF1aOtJ2HNO8odqVtC1tICxRPC3YzKjk",
-      authDomain: "on-journey-landing-4715e.firebaseapp.com",
-      projectId: "on-journey-landing-4715e",
-      storageBucket: "on-journey-landing-4715e.appspot.com",
-      messagingSenderId: "282313939009",
-      appId: "1:282313939009:web:bcde1046f7af46b5108ec0",
-      measurementId: "G-M603365L14"
+      apiKey: "AIzaSyBgB5dGOt1tfoc94ne0NIDPjnXIN4sG5Go",
+      authDomain: "onjourney-7fcf3.firebaseapp.com",
+      databaseURL: "https://onjourney-7fcf3-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "onjourney-7fcf3",
+      storageBucket: "onjourney-7fcf3.appspot.com",
+      messagingSenderId: "835571669474",
+      appId: "1:835571669474:web:8ec6e55514eac7fc35c1bb",
+      measurementId: "G-0SB6RR93NP"
     },
     services: {
       auth: true,

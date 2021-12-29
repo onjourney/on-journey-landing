@@ -117,24 +117,6 @@ export default {
 </script>
 
 <style>
-    #loading {
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        border: 3px solid rgb(147 197 253);
-        border-radius: 50%;
-        border-top-color: rgb(219 234 254);
-        animation: spin 1s ease-in-out infinite;
-        -webkit-animation: spin 1s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-        to { -webkit-transform: rotate(360deg); }
-    }
-    @-webkit-keyframes spin {
-        to { -webkit-transform: rotate(360deg); }
-    }
-
     html body .mx-datepicker,
     html body .mx-datepicker .mx-input-wrapper {
         width: 100%;
