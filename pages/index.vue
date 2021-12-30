@@ -216,7 +216,7 @@
                                 for free on your phone
                             </h1>
                         </div>
-                        <p class="text-sm mt-5 mb-10">The first step to start your journey takes less than a minute.</p>
+                        <p class="text-sm mt-5 mb-10">The first step to start your journey takes less than a minute</p>
 
                         <div class="relative z-[1] flex items-center gap-5">
                             <a href="" class="inline-block w-37 sm:w-40">
@@ -246,27 +246,32 @@
 </template>
 
 <script>
-    export default {
-        name: 'HomePage',
-        head({ $seo }) {
-            return $seo({
-                title: 'Home - On Journey',
-                description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
-                openGraph: {
-                    url: 'https://landing.onjourney.id'+require('~/assets/img/seo-img.jpg'),
-                },
-                twitter: {
-                    title: 'On-Journey - Home', 
-                    description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
-                }
-            })
-        },
-        layout: 'main',
-        methods: {
-            scrollToRegister() {
-                this.$router.push({path: '/become-our-partner'});
-                localStorage.setItem('scrollToRegister', true);
-            }
+import getSiteMeta from "~/utils/getSiteMeta";
+
+export default {
+    name: 'HomePage',
+    layout: 'main',
+    head() {
+        return {
+            meta: [
+                ...this.meta
+            ]
+        }
+    },
+    computed: {
+        meta() {
+            const metaData = {
+                url: `${process.env.baseUrl}`,
+                mainImage: `${process.env.baseUrl}`+require('~/assets/img/seo-img.jpg'),
+            };
+            return getSiteMeta(metaData);
+        }
+    },
+    methods: {
+        scrollToRegister() {
+            this.$router.push({path: '/become-our-partner'});
+            localStorage.setItem('scrollToRegister', true);
         }
     }
+}
 </script>

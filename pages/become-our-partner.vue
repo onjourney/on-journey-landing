@@ -235,34 +235,41 @@
 </template>
 
 <script>
-    export default {
-        name: 'BecomeOurPartnerPage',
-        layout: 'main',
-        head({ $seo }) {
-            return $seo({
-                title: 'On Journey - Become Our Partner',
+import getSiteMeta from "~/utils/getSiteMeta";
+
+export default {
+    name: 'BecomeOurPartnerPage',
+    layout: 'main',
+    head() {
+        return {
+            meta: [
+                ...this.meta
+            ]
+        }
+    },
+    computed: {
+        meta() {
+            const metaData = {
+                url: `${process.env.baseUrl}${this.$route.path}`,
+                title: 'Become Our Partner - On Journey',
                 description: 'Do you have a Travel Agency or Transportation Renter business ? Come join us as an On-Journey Partner!',
-                openGraph: {
-                    url: 'https://landing.onjourney.id'+require('~/assets/img/seo-img.jpg'),
-                },
-                twitter: {
-                    title: 'On Journey - Become Our Partner', 
-                    description: 'Do you have a Travel Agency or Transportation Renter business ? Come join us as an On-Journey Partner!',
-                }
-            })
-        },
-        mounted() {
-            if (localStorage.getItem('scrollToRegister')) {
-                setTimeout(() => {
-                    this.scrollToRegister();
-                }, 100);
-                localStorage.removeItem('scrollToRegister');
-            }
-        },
-        methods: {
-            scrollToRegister() {
-                $(this.$refs.registerTab)[0].scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
-            }
+                mainImage: `${process.env.baseUrl}`+require('~/assets/img/seo-img.jpg'),
+            };
+            return getSiteMeta(metaData);
+        }
+    },
+    mounted() {
+        if (localStorage.getItem('scrollToRegister')) {
+            setTimeout(() => {
+                this.scrollToRegister();
+            }, 100);
+            localStorage.removeItem('scrollToRegister');
+        }
+    },
+    methods: {
+        scrollToRegister() {
+            $(this.$refs.registerTab)[0].scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
         }
     }
+}
 </script>

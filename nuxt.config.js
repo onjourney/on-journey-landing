@@ -1,6 +1,10 @@
 import webpack from 'webpack'
 
 export default {
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://landing.onjourney.id'
+  },
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
   target: 'static',
@@ -49,28 +53,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/firebase',
-    'nuxt-seo'
+    '@nuxtjs/firebase'
   ],
-
-  seo: {
-    title: 'On Journey',
-    description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
-    keywords: 'On-Journey, Travel Agent, Travel, Agent, Plan Trip, Explore, Destinations',
-    canonical: 'auto',
-    isForcedTrailingSlash: false,
-    openGraph: {
-      title: 'On Journey', 
-      description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
-    },
-    twitter: { 
-      site: '@onjourneyid', 
-      creator: '@onjourneyid',
-      card: 'summary_large_image',
-      title: 'On-Journey', 
-      description: 'Connecting Traveller with Travel Agent to Explore Hidden Gem Destinations',
-    }
-  },
 
   firebase: {
     config: {

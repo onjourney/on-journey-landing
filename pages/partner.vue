@@ -84,27 +84,34 @@
 </template>
 
 <script>
-    export default {
-        name: 'PartnerPage',
-        layout: 'main',
-        head({ $seo }) {
-            return $seo({
-                title: 'On Journey - Partner',
-                description: `Let's join and contribute to the tourism ecosystem`,
-                openGraph: {
-                    url: 'https://landing.onjourney.id'+require('~/assets/img/seo-img.jpg'),
-                },
-                twitter: {
-                    title: 'On Journey - Partner', 
-                    description: `Let's join and contribute to the tourism ecosystem`,
-                }
-            })
-        },
-        methods: {
-            scrollToRegister() {
-                this.$router.push({path: '/become-our-partner'});
-                localStorage.setItem('scrollToRegister', true);
-            }
+import getSiteMeta from "~/utils/getSiteMeta";
+
+export default {
+    name: 'PartnerPage',
+    layout: 'main',
+    head() {
+        return {
+            meta: [
+                ...this.meta
+            ]
+        }
+    },
+    computed: {
+        meta() {
+            const metaData = {
+                url: `${process.env.baseUrl}${this.$route.path}`,
+                title: 'Partner - On Journey',
+                description: `We already have many potential partners who will join! let's join and contribute to the tourism ecosystem`,
+                mainImage: `${process.env.baseUrl}`+require('~/assets/img/seo-img.jpg'),
+            };
+            return getSiteMeta(metaData);
+        }
+    },
+    methods: {
+        scrollToRegister() {
+            this.$router.push({path: '/become-our-partner'});
+            localStorage.setItem('scrollToRegister', true);
         }
     }
+}
 </script>

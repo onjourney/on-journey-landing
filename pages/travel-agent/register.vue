@@ -58,21 +58,26 @@ import 'vue2-datepicker/index.css';
 import 'sweetalert2/dist/sweetalert2.min.css'
 import Swal from 'sweetalert2/dist/sweetalert2'
 import Cookies from 'js-cookie'
+import getSiteMeta from "~/utils/getSiteMeta"
 
 export default {
     layout: 'auth',
-    head({ $seo }) {
-        return $seo({
-            title: 'Register Travel Agent - On Journey',
-            description: `Let's join and contribute to the tourism ecosystem`,
-            openGraph: {
-                url: 'https://landing.onjourney.id'+require('~/assets/img/seo-img.jpg'),
-            },
-            twitter: {
-                title: 'Register Travel Agent - On Journey', 
-                description: `Let's join and contribute to the tourism ecosystem`,
-            }
-        })
+    head() {
+        return {
+            meta: [
+                ...this.meta
+            ]
+        }
+    },
+    computed: {
+        meta() {
+            const metaData = {
+                url: `${process.env.baseUrl}${this.$route.path}`,
+                title: 'Register Travel Agent - On Journey',
+                mainImage: `${process.env.baseUrl}`+require('~/assets/img/seo-img.jpg'),
+            };
+            return getSiteMeta(metaData);
+        }
     },
     data() {
         return {

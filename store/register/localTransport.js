@@ -21,7 +21,6 @@ export const getters = {
 
 export const actions = {
     async register({commit, dispatch, getters}, formData) {
-        console.log(formData);
         await this.$fire.auth.createUserWithEmailAndPassword(formData.email, formData.password);
 
         await this.$fire.firestore.collection('localTransport').doc(formData.email).set({
@@ -40,7 +39,6 @@ export const actions = {
         commit('setUser', formData.email);
     },  
     async checkUser({commit}, email) {
-        console.log('checkuser');
         const userRef = this.$fire.firestore.collection('localTransport').doc(email)
         const userDoc = await userRef.get();
 
