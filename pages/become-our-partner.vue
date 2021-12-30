@@ -245,6 +245,9 @@ export default {
             title: 'Become Our Partner - On Journey',
             meta: [
                 ...this.meta
+            ],
+            link: [
+                { hid: "canonical", rel: "canonical", href: `${process.env.baseUrl}${this.$route.path}` },
             ]
         }
     },
