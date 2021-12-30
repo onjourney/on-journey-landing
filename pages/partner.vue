@@ -91,6 +91,7 @@ export default {
     layout: 'main',
     head() {
         return {
+            title: 'Partner - On Journey',
             meta: [
                 ...this.meta
             ]

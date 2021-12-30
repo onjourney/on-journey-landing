@@ -64,6 +64,7 @@ export default {
     layout: 'auth',
     head() {
         return {
+            title: 'Register Travel Agent - On Journey',
             meta: [
                 ...this.meta
             ]

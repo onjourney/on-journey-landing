@@ -93,4 +93,6 @@ export default {
     height: '2.5px',
     throttle: 0
   },
+
+  loadingIndicator: '~/views/loading/loading-indicator.html'
 }

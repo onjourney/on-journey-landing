@@ -253,8 +253,9 @@ export default {
     layout: 'main',
     head() {
         return {
+            title: 'On Journey',
             meta: [
-                ...this.meta
+                ...this.meta,
             ]
         }
     },

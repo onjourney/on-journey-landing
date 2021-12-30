@@ -242,6 +242,7 @@ export default {
     layout: 'main',
     head() {
         return {
+            title: 'Become Our Partner - On Journey',
             meta: [
                 ...this.meta
             ]

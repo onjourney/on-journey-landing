@@ -53,6 +53,7 @@ export default {
     layout: 'auth',
     head() {
         return {
+            title: 'Register Local Transport - On Journey',
             meta: [
                 ...this.meta
             ]

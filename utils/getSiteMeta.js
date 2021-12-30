@@ -48,23 +48,19 @@ export default (meta) => {
             content: (meta && meta.twitterCard) || twitterCard 
         },
         {
-            hid: "twitter:url",
             name: "twitter:url",
             content: (meta && meta.url) || url,
         },
         {
-            hid: "twitter:title",
             name: "twitter:title",
             content: (meta && meta.title) || title,
         },
         {
-            hid: "twitter:description",
             name: "twitter:description",
             content: (meta && meta.description) || description,
         },
         {
-            hid: "twitter:image:src",
-            name: "twitter:image:src",
+            name: "twitter:image",
             content: (meta && meta.mainImage) || mainImage,
         },
     ];
