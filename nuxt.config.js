@@ -5,6 +5,10 @@ export default {
     baseUrl: process.env.BASE_URL || 'https://landing.onjourney.id'
   },
 
+  generate: {
+    fallback: true
+  },
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
   target: 'static',
