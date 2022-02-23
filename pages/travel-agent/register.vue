@@ -38,18 +38,25 @@
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                         <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
                     </svg>
-                    <h1 class="text-lg font-extrabold mt-4">Submission Complete!</h1>
-                    <p class="text-center mt-1">Successfully registered your account. We'll apply everything we can in the next step.</p>
+                    <h1 class="text-lg font-extrabold mt-4">Registration Successful!</h1>
+                    <p class="text-center mt-1">Successfully registered your account. You must first verify your account to the On-Journey head office!</p>
                     
-                    <nuxt-link to="/" custom exact v-slot="{ href, navigate }">
-                        <a :href="href" @click="navigate" class="py-2 px-4.5 mt-6 border text-2sm  transition duration-300 focus:outline-none rounded-lg">Back to Home</a>
-                    </nuxt-link>
+                    <div class="flex items-center gap-4">
+                        <a href="https://on-journey-mitra.herokuapp.com/" target="blank" class="py-2 px-4.5 mt-6 border text-2sm  transition duration-300 focus:outline-none rounded-lg">Login Mitra</a>
+
+                        <button type="button"  @click.prevent="openModal()" class="py-2 px-4.5 mt-6 border text-2sm  transition bg-cs-text-primary text-white duration-300 focus:outline-none rounded-lg">Verification Steps</button>
+                    </div>
                 </div>
             </div>
         </div>
         <div v-if="step != stepLength" class="px-10 py-5 md:border-t md:border-cs-border text-2xs md:bg-gray-50 text-center md:text-left">
             By clicking the button above, you agree to our <a href="" class="font-semibold text-[#003e6a]">term of use</a> and <a href="" class="font-semibold text-[#003e6a]">privacy policies</a>
         </div>
+
+        <!-- modal -->
+        <transition name="fade" mode="out-in">
+            <ModalVerify v-if="isModalActive" />
+        </transition>
     </div>
 </template>
 
@@ -57,7 +64,6 @@
 import 'vue2-datepicker/index.css';
 import 'sweetalert2/dist/sweetalert2.min.css'
 import Swal from 'sweetalert2/dist/sweetalert2'
-import Cookies from 'js-cookie'
 import getSiteMeta from "~/utils/getSiteMeta"
 
 export default {
@@ -87,15 +93,20 @@ export default {
         return {
             formData: {},
             step: 1,
-            stepLength: 3
+            stepLength: 3,
+            isModalActive: false
         }
     },
-    async mounted() {
-        if (Cookies.get('isUserSubmit')) {
+    mounted() {
+        if (localStorage.getItem('isTravelAgentSubmit')) {
             this.step = this.stepLength;
         }
     },
     methods: {
+        openModal() {
+            this.$store.dispatch("page/openModal");
+            this.isModalActive = true;
+        },
         async submit() {
             let userFormData = this.$store.state.register.travelAgent.userFormData;
             let companyFormData = this.$store.state.register.travelAgent.companyFormData;
@@ -119,7 +130,7 @@ export default {
             $(this.$refs.formStep2.$refs.submitBtn).removeAttr('disabled');
             this.$refs.formStep2.submitLoad = false;
 
-            Cookies.set('isUserSubmit', true, { expires: 1, path: '' });
+            localStorage.setItem('isTravelAgentSubmit', true);
         }
     }
 }

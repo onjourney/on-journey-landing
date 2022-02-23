@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <form @submit.prevent="nextStep">
         <div class="relative w-full mb-4">
             <label for="firstName" class="block text-sm mb-2">
                 First Name
@@ -95,11 +95,11 @@
 
         <div class="flex justify-end items-center gap-4 mt-7">
             <div v-if="nextLoad" class="inline-block w-[18px] h-[18px] border-[3px] rounded-[50%] border-[rgb(192,192,192)] border-t-[rgb(219,234,254)] animate-spin -mr-1"></div>
-            <button ref="nextBtn" @click="nextStep" type="button" class="bg-cs-dark-blue py-2 px-4 text-white text-2sm border border-cs-dark-blue disabled:bg-[#858585] disabled:border-[rgb(133,133,133)] disabled:cursor-not-allowed border-csbg-cs-dark-blue transition duration-300 focus:outline-none rounded-md">
+            <button ref="nextBtn" type="submit" class="bg-cs-dark-blue py-2 px-4 text-white text-2sm border border-cs-dark-blue disabled:bg-[#858585] disabled:border-[rgb(133,133,133)] disabled:cursor-not-allowed border-csbg-cs-dark-blue transition duration-300 focus:outline-none rounded-md">
                 Next
             </button>
         </div>
-    </div>
+    </form>
 </template>
 
 <script>
@@ -141,17 +141,17 @@ export default {
             this.validateRequest();
 
             if (Object.keys(this.errorMessage).length == 0 && this.$parent.step < this.$parent.stepLength) {
-                try {
+                // try {
                     await this.$store.dispatch('register/travelAgent/checkUser', this.formData.email);
-                } catch (error) {
-                    Swal.fire({
-                        title: 'Error!',
-                        text: 'Oops, something went wrong, please try again later',
-                        icon: 'error',
-                        confirmButtonText: 'Okay'
-                    });
-                    return false;
-                }
+                // } catch (error) {
+                //     Swal.fire({
+                //         title: 'Error!',
+                //         text: 'Oops, something went wrong, please try again later',
+                //         icon: 'error',
+                //         confirmButtonText: 'Okay'
+                //     });
+                //     return false;
+                // }
 
                 if (!this.$store.state.register.travelAgent.isUserExist) {
                     this.$store.commit('register/travelAgent/setUserFormData', this.formData);

@@ -19,6 +19,15 @@ export const actions = {
     setDropdownActive({ commit }, val) {
         commit('setDropdownActive', val);
     },
+    openModal() {
+        let scrollWidth = window.innerWidth - document.documentElement.clientWidth;
+        $('body').addClass('overflow-hidden').css('padding-right', scrollWidth+'px');
+    },
+    closeModal() {
+        setTimeout(() => {
+            $('body').removeClass('overflow-hidden').css('padding-right', '0px');
+        }, 300);
+    },
     timeout({ commit }, val) {
         return new Promise(resolve => setTimeout(resolve, val));
     }
