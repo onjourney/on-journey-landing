@@ -23,8 +23,8 @@
                 </div>
 
                 <div class="justify-end hidden xl:flex mt-17 max-w-full">
-                    <SVGRegisterTravelAgent v-if="$route.path == '/travel-agent/register'" />
-                    <SVGRegisterLocalTransport v-if="$route.path == '/local-transport/register'" />
+                    <img class="w-full h-full object-cover object-center" src="~/assets/img/illustrations/register-travel-agent.svg" v-if="$route.path == '/travel-agent/register'">
+                    <img class="w-full h-full object-cover object-center" src="~/assets/img/illustrations/register-local-transport.svg" v-if="$route.path == '/local-transport/register'">
                 </div>
             </div>
 
@@ -41,7 +41,6 @@
 <script>
     export default {
         auth: 'guest',
-
     }
 </script>
 

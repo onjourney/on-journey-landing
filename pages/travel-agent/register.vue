@@ -52,10 +52,13 @@
         <div v-if="step != stepLength" class="px-10 py-5 md:border-t md:border-cs-border text-2xs md:bg-gray-50 text-center md:text-left">
             By clicking the button above, you agree to our <a href="" class="font-semibold text-[#003e6a]">term of use</a> and <a href="" class="font-semibold text-[#003e6a]">privacy policies</a>
         </div>
+        <div v-if="step == stepLength" class="px-10 py-5 md:border-t md:border-cs-border text-2xs md:bg-gray-50 text-center">
+            Information and contact support <a href="mailto:info@onjourney.id" class="font-semibold text-[#003e6a]">info@onjourney.id</a>
+        </div>
 
         <!-- modal -->
         <transition name="fade" mode="out-in">
-            <ModalVerify v-if="isModalActive" />
+            <ModalVerify v-if="isModalActive" registration="travel-agent" />
         </transition>
     </div>
 </template>
@@ -67,7 +70,7 @@ import Swal from 'sweetalert2/dist/sweetalert2'
 import getSiteMeta from "~/utils/getSiteMeta"
 
 export default {
-    layout: 'auth',
+    layout: 'register',
     head() {
         return {
             title: 'Register Travel Agent - On Journey',

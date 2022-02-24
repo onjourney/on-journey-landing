@@ -5,7 +5,7 @@
                 <div class="bg-white sm:my-15 sm:rounded-xl min-h-screen sm:min-h-0">
                     <div class="border-b border-cs-border py-5.5 px-8 flex items-center justify-between">
                         <div class="font-semibold text-lg">
-                            <span class="text-2xs font-bold text-cs-cyan">
+                            <span class="text-2xs font-bold text-cs-text-primary">
                                 On Journey
                             </span>
                             <h1>Verification Steps</h1>
@@ -24,9 +24,9 @@
                             </div>
 
                             <div class="flex-1 pl-8 sm:pr-8 -mt-1 text-2sm">
-                                <h1 class="font-bold text-cs-cyan-main mb-1.5">Register Account</h1>
+                                <h1 class="font-bold text-cs-text-primary mb-1.5">Register Account</h1>
                                 <p>
-                                    Kunjungi halaman <a href="https://landing.onjourney.id/become-our-partner" class="underline text-cs-cyan-main" target="_blank">Landing On-Journey</a> lalu klik register travel agent atau local transport. Berikan informasi atau data kalian secara lengkap dan tepat pada form yang disediakan. Lanjutkan hingga proses selesai.
+                                    Kunjungi halaman <a href="https://landing.onjourney.id/become-our-partner" class="underline text-cs-cyan" target="_blank">Landing On-Journey</a> lalu klik register travel agent atau local transport. Berikan informasi atau data kalian secara lengkap dan tepat pada form yang disediakan. Lanjutkan hingga proses selesai.
                                 </p>
                             </div>
                         </div>
@@ -37,9 +37,41 @@
                             </div>
 
                             <div class="flex-1 pl-8 sm:pr-8 -mt-1 text-2sm">
-                                <h1 class="font-bold text-cs-cyan-main mb-1.5">Verify Account</h1>
+                                <h1 class="font-bold text-cs-text-primary mb-1.5">Verify Account</h1>
                                 <p>
-                                    Kunjungi halaman <a href="https://landing.onjourney.id/become-our-partner" class="underline text-cs-cyan-main" target="_blank">Landing On-Journey</a> lalu klik register travel agent atau local transport. Berikan informasi atau data kalian secara lengkap dan tepat pada form yang disediakan. Lanjutkan hingga proses selesai.
+                                    Verifikasi pendaftaran anda secara offline maupun online dengan melakukan scanning beberapa dokumen diantaranya:
+                                </p>
+                                <ul v-if="registration == 'travel-agent'" class="list-disc mt-3 pl-5">
+                                    <li>KTP Pemilik / Ketua</li>
+                                    <li>NPWP Pemilik / Ketua </li>
+                                    <li>Legal Perusahaan (Opsional)</li>
+                                    <li>Rekening Usaha</li>
+                                    <li>Mengisi Dokumen Kesepakantan & Kerjasama On-Journey (<a href="https://landing.onjourney.id/become-our-partner" class="underline text-cs-cyan" target="_blank">download</a>)</li>
+                                    <li>Melampirkan Scan KTP & SIM 3 Orang Guide</li>
+                                </ul>
+                                <ul v-if="registration == 'local-transport'" class="list-disc mt-3 pl-5">
+                                    <li>KTP</li>
+                                    <li>SIM</li>
+                                    <li>Mengisi Dokumen Kesepakantan & Kerjasama On-Journey (<a href="https://landing.onjourney.id/become-our-partner" class="underline text-cs-cyan" target="_blank">download</a>)</li>
+                                </ul>
+
+                                <div class="mt-3">Bantuan:</div>
+                                <ul>
+                                    <li>Indra <a href="tel:085333009777" class="underline text-cs-cyan">085333009777</a></li>
+                                    <li>Adhi <a href="tel:085333009777" class="underline text-cs-cyan">085107013166</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- step 3 -->
+                        <div class="flex mt-10">
+                            <div class="flex flex-col items-center w-[50px] sm:w-[100px] relative before:absolute before:left-[50%] before:transform before:translate-x-[-50%] before:top-12 before:-bottom-10 before:w-[3px] before:bg-gray-200">
+                                <div class="w-12 h-12 rounded-full bg-cs-text-primary text-white flex items-center justify-center text-2lg font-extrabold">3</div>
+                            </div>
+
+                            <div class="flex-1 pl-8 sm:pr-8 -mt-1 text-2sm">
+                                <h1 class="font-bold text-cs-text-primary mb-1.5">Review Process</h1>
+                                <p>
+                                    Kami akan mereview dokumen anda dalam masa maksimal 3 x 24 jam dan akan menghubungi anda secepatnya.
                                 </p>
                             </div>
                         </div>
@@ -54,18 +86,18 @@
                             </div>
 
                             <div class="flex-1 pl-8 sm:pr-8 -mt-1 text-2sm">
-                                <h1 class="font-bold text-cs-cyan-main mb-1.5">Complete</h1>
+                                <h1 class="font-bold text-cs-text-primary mb-1.5">Complete</h1>
                                 <p>
-                                    Kunjungi halaman <a href="https://landing.onjourney.id/become-our-partner" class="underline text-cs-cyan-main" target="_blank">Landing On-Journey</a> lalu klik register travel agent atau local transport. Berikan informasi atau data kalian secara lengkap dan tepat pada form yang disediakan. Lanjutkan hingga proses selesai.
+                                    Kami akan mengirimkan Akun beserta kode aksesnya ke e-mail dan memberikan notifikasi ke nomor yang telah didaftarkan. Anda dapat mereset password yang diterima dengan menu lupa password, atau langsung login ke dashboard dengan akun tersebut.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="text-2xs px-8 py-5 border-t">
-                        <svg class="w-4.5 h-4.5 inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/>
+                    <div class="text-2xs px-8 py-5 border-t text-center">
+                        <svg class="w-4.5 h-4.5 inline-block mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/>
                             <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z"/>
                         </svg>
-                        Jika anda masih memiliki pertanyaan, kalian bisa menghubungin bagian pusat bantuan kami pada tombol Contact Support.
+                        Information and contact support <a href="mailto:info@onjourney.id" class="font-semibold text-[#003e6a]">info@onjourney.id</a>
                     </div>
                 </div>
             </div>
@@ -75,8 +107,7 @@
 
 <script>
 export default {
-    name: 'add-vehicle',
-    props: ['vehicle'],
+    props: ['registration'],
     data() {
         return {
             outsideClick: true,

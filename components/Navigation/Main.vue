@@ -54,19 +54,25 @@ export default {
         }
     },
     mounted() {
-        if (window.scrollY > $(this.$el).height()) {
-            this.isActiveNav = true;
-        } else {
-            this.isActiveNav = false;
-        }
+        this.checkScroll;
     },
     created() {
         window.addEventListener("scroll", this.handleScroll);
+        window.addEventListener("popstate", function() {
+            $("html, body").animate({scrollTop: 0}, 800);
+        });
     },
     destroyed() {
         window.removeEventListener("scroll", this.handleScroll);
     },
     methods: {
+        checkScroll() {
+            if (window.scrollY > $(this.$el).height()) {
+                this.isActiveNav = true;
+            } else {
+                this.isActiveNav = false;
+            }
+        },
         handleScroll () {
             this.$store.dispatch("page/setCurrentScrollY", window.scrollY);
         }
