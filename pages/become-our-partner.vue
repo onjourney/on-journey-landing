@@ -176,8 +176,8 @@
             </div>
 
             <div class="flex gap-3 sm:gap-5 justify-center mt-8">
-                <input type="email" class="px-4 py-3.5 rounded-lg bg-gray-100 flex-1 sm:flex-none w-auto sm:w-[270px] text-2sm focus:outline-none" placeholder="example@email.com">
-                <button type="submit" class="text-2sm whitespace-nowrap px-6 py-3.5 rounded-lg bg-cs-dark-blue hover:bg-[#006ca3] transition-colors duration-300 text-white">Subscribe</button>
+                <input type="email" class="px-4 py-3.5 rounded-lg bg-gray-100 flex-1 sm:flex-none min-w-[150px] sm:w-[270px] text-2sm focus:outline-none" placeholder="example@email.com">
+                <button type="submit" class="text-2sm whitespace-nowrap px-4 sm:px-6 py-3.5 rounded-lg bg-cs-dark-blue hover:bg-[#006ca3] transition-colors duration-300 text-white">Subscribe</button>
             </div>
         </div>
 

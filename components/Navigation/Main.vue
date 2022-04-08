@@ -57,7 +57,7 @@ export default {
         this.checkScroll;
     },
     created() {
-        if (process.browser) {
+        if (process.client) {
             window.addEventListener("scroll", this.handleScroll);
             window.addEventListener("popstate", function() {
                 $("html, body").animate({scrollTop: 0}, 800);
