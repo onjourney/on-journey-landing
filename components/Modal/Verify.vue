@@ -5,7 +5,7 @@
                 <div class="bg-white sm:my-15 sm:rounded-xl min-h-screen sm:min-h-0">
                     <div class="border-b border-cs-border py-5.5 px-8 flex items-center justify-between">
                         <div class="font-semibold text-lg">
-                            <span class="text-2xs font-bold text-cs-text-primary">
+                            <span class="text-2xs font-bold text-cs-cyan">
                                 On Journey
                             </span>
                             <h1>Verification Steps</h1>

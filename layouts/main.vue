@@ -2,7 +2,9 @@
     <div class="mx-auto">
         <!-- navigation -->
         <NavigationMain />
-        <NavigationMainMobile :isNavMobileActive="isNavMobileActive" />
+        <transition name="fade" mode="out-in">
+            <NavigationMainMobile v-if="isNavMobileActive" />
+        </transition>
         
         <Nuxt />
 

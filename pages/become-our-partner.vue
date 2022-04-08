@@ -195,9 +195,9 @@
                                 Register your company now.
                             </h1>
                         </div>
-                        <p class="text-sm mt-5 mb-10">Take advantage of our features and leap up your business.</p>
+                        <p class="text-sm mt-5 sm:mt-7 mb-8 sm:mb-10">Take advantage of our features and leap up your business.</p>
 
-                        <div class="relative z-[1] flex items-center gap-3">
+                        <div class="relative z-[1] flex flex-wrap items-center gap-3">
                             <nuxt-link to="/travel-agent/register" custom exact v-slot="{ href, navigate }">
                                 <a :href="href" @click="navigate" class="p-5 py-3 rounded-full bg-cs-dark-blue text-white text-2sm font-bold hover:bg-[#006ca3] transition-colors duration-300 flex items-center gap-2 whitespace-nowrap">
                                     <svg class="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -272,7 +272,7 @@ export default {
     },
     methods: {
         scrollToRegister() {
-            $(this.$refs.registerTab)[0].scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+            this.$refs.registerTab.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
         }
     }
 }

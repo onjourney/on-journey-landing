@@ -22,7 +22,9 @@ export default {
         }
     },
     created() {
-        this.handleFunction();
+        if (process.browser) {
+            this.handleFunction();
+        }
     },
     mounted() {
         this.handleFunction();

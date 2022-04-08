@@ -57,10 +57,12 @@ export default {
         this.checkScroll;
     },
     created() {
-        window.addEventListener("scroll", this.handleScroll);
-        window.addEventListener("popstate", function() {
-            $("html, body").animate({scrollTop: 0}, 800);
-        });
+        if (process.browser) {
+            window.addEventListener("scroll", this.handleScroll);
+            window.addEventListener("popstate", function() {
+                $("html, body").animate({scrollTop: 0}, 800);
+            });
+        }
     },
     destroyed() {
         window.removeEventListener("scroll", this.handleScroll);

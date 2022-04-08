@@ -1,6 +1,6 @@
 <template>
     <!-- mobile -->
-    <nav class="fixed z-[150] inset-0 flex items-center justify-center flex-col gap-6 bg-white text-cs-text-primary">
+    <nav class="fixed z-[150] inset-0 flex items-center justify-center flex-col gap-6 bg-white text-cs-text-primary transition-opacity duration-300">
         <div>
             <img class="w-28 sm:w-32" src="~/assets/img/logo.png" alt="logo">
         </div>
@@ -33,26 +33,10 @@
 
 <script>
 export default {
-    props: ['isNavMobileActive'],
-    mounted() {
-        if (!this.isNavMobileActive) {
-            $(this.$el).hide();
-        }
-    },
     methods: {
         closeNavMobile() {
             this.$parent.isNavMobileActive = false;
-            $(this.$el).fadeOut();
         }
     },
-    watch: {
-        isNavMobileActive(val) {
-            if (val) {
-                $(this.$el).fadeIn();
-            } else {
-                $(this.$el).fadeOut();
-            }
-        }
-    }
 }
 </script>
