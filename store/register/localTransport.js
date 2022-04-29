@@ -39,7 +39,7 @@ export const actions = {
         commit('setUser', formData.email);
     },  
     async checkUser({commit}, email) {
-        const userRef = this.$fire.firestore.collection('localTransport').doc(email)
+        const userRef = this.$fire.firestore.collection('localTransports').doc(email)
         const userDoc = await userRef.get();
 
         if(userDoc.exists) {
