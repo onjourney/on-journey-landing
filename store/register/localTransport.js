@@ -23,7 +23,7 @@ export const actions = {
     async register({commit, dispatch, getters}, formData) {
         await this.$fire.auth.createUserWithEmailAndPassword(formData.email, formData.password);
 
-        await this.$fire.firestore.collection('localTransport').doc(formData.email).set({
+        await this.$fire.firestore.collection('localTransports').doc(formData.email).set({
             firstName: formData.firstName,
             lastName: formData.lastName,
             address: formData.address,
