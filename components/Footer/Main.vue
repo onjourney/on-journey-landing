@@ -38,14 +38,18 @@
             </div>
           </li>
           <li class="mt-4">
-            <a href="mailto:info@onjourney.id">info@onjourney.id</a>
-            <a href="mailto:indra@onjourney.id" class="inline-block mt-1"
+            <a href="mailto:info@onjourney.id" class="block"
+              >info@onjourney.id</a
+            >
+            <a href="mailto:indra@onjourney.id" class="block mt-1"
               >indra@onjourney.id</a
             >
           </li>
           <li class="mt-4">
-            <a href="tel:+62 853 3300 9777">+62 853 3300 9777 (Indra)</a>
-            <a href="tel:+62 851 0701 3166" class="inline-block mt-1"
+            <a href="tel:+62 853 3300 9777" class="block"
+              >+62 853 3300 9777 (Indra)</a
+            >
+            <a href="tel:+62 851 0701 3166" class="block mt-1"
               >+62 851 0701 3166 (Adhi)</a
             >
           </li>
