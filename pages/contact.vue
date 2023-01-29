@@ -68,7 +68,8 @@
 
           <a
             href="https://api.whatsapp.com/send?phone=6285333009777"
-            class="px-5.5 py-3 text-2sm mt-2 rounded-full text-cs-dark-blue border-2 border-cs-border hover:border-cs-dark-blue hover:bg-cs-dark-blue hover:text-white transition-colors duration-500 font-bold whitespace-nowrap"
+            target="_blank"
+            class="px-5.5 py-3 text-2sm mt-2 rounded-full border-2 border-cs-dark-blue bg-cs-dark-blue hover:bg-cs-dark-blue/90 text-white transition-colors duration-500 font-bold whitespace-nowrap"
           >
             Contact Now
           </a>
@@ -136,7 +137,7 @@
 
           <a
             href="mailto:info@onjourney.id"
-            class="px-5.5 py-3 text-2sm mt-2 rounded-full text-cs-dark-blue border-2 border-cs-border hover:border-cs-dark-blue hover:bg-cs-dark-blue hover:text-white transition-colors duration-500 font-bold whitespace-nowrap"
+            class="px-5.5 py-3 text-2sm mt-2 rounded-full border-2 border-cs-dark-blue bg-cs-dark-blue hover:bg-cs-dark-blue/90 text-white transition-colors duration-500 font-bold whitespace-nowrap"
           >
             Email Now
           </a>
