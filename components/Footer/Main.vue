@@ -21,19 +21,33 @@
         </button>
       </div>
       <div class="col-span-1 lg:col-span-2">
-        <h1 class="font-bold text-lg">Get in Touch</h1>
+        <h1 class="font-bold text-lg">Contact Us</h1>
         <ul class="mt-5 text-2sm">
           <li class="mt-4">
-            <span>
-              Jl. Kenyeri No.82, Sumerta Kaja, Kecamatan. Denpasar Timur., Kota
-              Denpasar, Bali 80236
-            </span>
+            <div>
+              <span class="font-medium">[Office]</span> Jl. Kenyeri No.82,
+              Sumerta Kaja, Kecamatan. Denpasar Timur., Kota Denpasar, Bali
+              80236
+            </div>
+            <div class="mt-1">
+              <span class="font-medium whitespace-nowrap"
+                >[Community Representative]</span
+              >
+              Jl. Setia Budi No.24A, Kuta, Kec. Kuta, Kabupaten Badung, Bali
+              80361
+            </div>
           </li>
           <li class="mt-4">
             <a href="mailto:info@onjourney.id">info@onjourney.id</a>
+            <a href="mailto:indra@onjourney.id" class="inline-block mt-1"
+              >indra@onjourney.id</a
+            >
           </li>
           <li class="mt-4">
-            <a href="tel:+62 812 3739 8603">+62 812 3739 8603</a>
+            <a href="tel:+62 853 3300 9777">+62 853 3300 9777 (Indra)</a>
+            <a href="tel:+62 851 0701 3166" class="inline-block mt-1"
+              >+62 851 0701 3166 (Adhi)</a
+            >
           </li>
         </ul>
       </div>

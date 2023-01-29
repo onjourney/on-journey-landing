@@ -154,6 +154,21 @@
           <h1 class="font-extrabold text-xl mb-5">What is On Journey?</h1>
 
           <p class="leading-7">
+            On-Journey adalah SaaS Agregator Pariwisata terintegrasi yang
+            memudahkan traveler dalam memesan layanan diinginkan kepada travel
+            agen & tranpostasi pariwisata lokal, sekaligus memperkuat ekosistem
+            pariwisata dengan menambah kemampuan UKM Pariwisata seperti travel
+            agen konvensional, vehicle renter & moda transportasi lokal dalam
+            bersaing secara digital melalui fitur-fiturnya, mulai dari publikasi
+            layanan, booking engine & manajemen order, manajemen resource,
+            transaksi, portfolio dan review sampai ke, marketing-set tools
+            seperti link transaksi & QR. On-Journey juga memiliki fitur lainnya
+            yang membuat travel agent dapat mengakses lebih banyak market
+            seperti Backpacker Package, Custom Trip, NFT Package dsb, serta
+            menghidupkan destinasi wisata tak terekspos untuk memajukan daerah
+            wisata.
+          </p>
+          <p class="leading-7 mt-4">
             Salah satu tujuan kami dalam mendirikan startup ini adalah membantu
             travel agen konvensional dan moda transportasi lokal yang telah
             tergerus eksistensinya oleh kemajuan dan kemandirian traveler dalam
@@ -301,6 +316,163 @@
                 memperkuat ekosistem wisata.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="relative z-[1] px-5 sm:px-15 lg:px-32 py-20 lg:max-w-[1320px] xl:max-w-[1536px] mx-auto border-b border-cs-border"
+    >
+      <h1 class="text-1.5xl sm:text-3xl font-extrabold text-center">
+        Our Impact to The Society
+      </h1>
+
+      <div class="flex flex-col gap-4 sm:w-75% mx-auto mt-5">
+        <div class="flex gap-4">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5"
+              fill="currentColor"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+              />
+            </svg>
+          </div>
+
+          <div>
+            Memajukan & Meningkatkan Ekonomi serta Exposure terhadap Daerah
+            Wisata, Destinasi, Desa Wisata, Daya Tarik Wisata dan Pariwisata
+            Lokal bahkan kepada daerah wisata & destinasi wisata baru.
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5"
+              fill="currentColor"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+              />
+            </svg>
+          </div>
+
+          <div>
+            Membantu Meningkatkan Keuntungan Pelaku Industri Pariwisata (Travel
+            Agent & Moda Transportasi Pariwisata Lokal) dengan Memoderenisasi &
+            Merapikan Proses Bisnis Pariwisata Konvensional yang secara tidak
+            langsung meningkatkan perputaran perekonomian daerah destinasi
+            pariwisata.
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5"
+              fill="currentColor"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+              />
+            </svg>
+          </div>
+
+          <div>
+            Memperkuat & menghasilkan lapangan kerja baru yang sustainable
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5"
+              fill="currentColor"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+              />
+            </svg>
+          </div>
+
+          <div>
+            Meningkatkan peran pokdarwis, paguyuban, maupun komunitas adat dalam
+            memajukan daerahnya.
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5"
+              fill="currentColor"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+              />
+            </svg>
+          </div>
+
+          <div>
+            Perpanjangan tangan dalam mempermudah proses fungsi pengawasan
+            kepada wisatawan & dan Pemeliharaan Terhadap Destinasi Wisata & Daya
+            Tarik Wisata yang pada umumnya memiliki nilai aset budaya, sejarah
+            dan alam.
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5"
+              fill="currentColor"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+              />
+            </svg>
+          </div>
+
+          <div>
+            Merapikan dan memaksimalkan sumbangsih backpacker pada daerah
+            wisata.
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-5 h-5"
+              fill="currentColor"
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
+              />
+            </svg>
+          </div>
+
+          <div>
+            Mempermudah proses monitoring & evaluasi terhadap daerah pariwisata
+            sehingga dapat menjadi masukan pemerintah ataupun kebijakan dalam
+            internal perusahaan dalam memajukan destinasi pariwisata.
           </div>
         </div>
       </div>
