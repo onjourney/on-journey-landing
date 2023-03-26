@@ -373,7 +373,7 @@
                   src="~/assets/img/illustrations/google-play.png"
                 />
               </a>
-              <a href="#" class="inline-block w-37 sm:w-40">
+              <a href="https://apps.apple.com/id/app/on-journey/id6444263274" class="inline-block w-37 sm:w-40">
                 <img
                   class="h-full"
                   src="~/assets/img/illustrations/app-store.png"
